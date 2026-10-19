@@ -1,0 +1,46 @@
+name: Weekly Lebanon News Scrape
+
+# Runs the scraper on GitHub's own servers - your computer does not need to be on.
+# - Scheduled: every Sunday at 05:00 UTC (~08:00 Beirut time; off by 1 hour in winter,
+#   since Beirut's DST offset changes and cron can't follow it automatically).
+# - Also runnable any time by hand: repo's "Actions" tab -> this workflow -> "Run workflow".
+on:
+  schedule:
+    - cron: '0 5 * * 0'
+  workflow_dispatch: {}
+
+# Needed so the built-in token can push the updated .xlsx/state files back to this repo.
+# (Also requires "Read and write permissions" to be turned on once under
+# Settings -> Actions -> General -> Workflow permissions - see README_GITHUB_ACTIONS.md.)
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - name: Confirm Chrome is available (for JS-rendered sites)
+        run: google-chrome --version
+
+      - name: Run all scrapers
+        run: python scraper/run_all.py --incremental --delay 1.5
+
+      - name: Commit and push new articles
+        run: |
+          git config user.name "news-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- "*.xlsx" scraper/state scraper/scrape_log.txt
+          git diff --cached --quiet || git commit -m "Weekly news scrape: $(date -u +'%Y-%m-%d')"
+          git push

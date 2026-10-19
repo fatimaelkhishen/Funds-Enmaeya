@@ -1,0 +1,16 @@
+scraper/__pycache__/
+scraper/sites/__pycache__/
+__pycache__/
+*.pyc
+venv/
+weekly_run_output.txt
+
+# test runs / backups (added 2026-10-16)
+_test_output/
+scraper/state_test/
+scraper/scrape_log_test.txt
+scraper/run_summary_test.csv
+scraper/_backup_before_fix_*/
+scraper/state_dry/
+scraper/scrape_log_dry.txt
+scraper/pagination_check.csv

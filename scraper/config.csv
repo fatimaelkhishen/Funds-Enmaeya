@@ -1,0 +1,46 @@
+organization,url,filename,notes
+United Nations in Lebanon,https://lebanon.un.org/en/press-centre/press-releases,United_Nations_in_Lebanon.xlsx,
+UNDP Lebanon,https://www.undp.org/lebanon/news-centre,UNDP_Lebanon.xlsx,"click-pagination driver (JS ""View More"" button.load-more-custom AJAX-appends results", 183 total)
+UNICEF Lebanon,https://www.unicef.org/lebanon/press-center,UNICEF_Lebanon.xlsx,"official site often bot-blocks scripts - falls back to ReliefWeb (source UNICEF, country Lebanon)"
+UNIFIL,https://unifil.unmissions.org/en/press-releases,UNIFIL.xlsx,
+FAO Lebanon,https://www.fao.org/lebanon/news/en/,FAO_Lebanon.xlsx,
+WFP,https://www.wfp.org/news,WFP.xlsx,
+WHO Lebanon,https://www.emro.who.int/lbn/lebanon-news/,WHO_Lebanon.xlsx,
+UNHCR Lebanon,https://www.unhcr.org/lb/news-and-stories/press-releases,UNHCR_Lebanon.xlsx,click-pagination driver (Drupal Views AJAX search-pager, div[role=button] not <a href>)
+IOM,https://www.iom.int/news,IOM.xlsx,"global news listing (NOT Lebanon-scoped) - ~497 pages via real <a href=""?page=N"" rel=""next""> links; run with --max-pages 500 to get all of them (default cap is 300). Was https://www.iom.int/lebanon-crisis (a static topic page with no pagination/real listing) then briefly mena.iom.int/authors/iom-lebanon (unverified regional author archive)", before switching to this per explicit request to loop over the full global listing.
+UNRWA,https://reliefweb.int/updates?advanced-search=%28S1484%29_%28C137%29,UNRWA.xlsx,"unrwa.org is behind a Cloudflare challenge even in a normal browser (checked 2026-10-16) - scraped from ReliefWeb instead (source=UNRWA, country=Lebanon)"
+ReliefWeb / OCHA,https://reliefweb.int/updates?list=Lebanon%20Updates&advanced-search=%28PC137%29,ReliefWeb_OCHA.xlsx,real <a href> pager (rel=next) - works with default run_scrape, JS-rendered listing (Selenium auto-fallback)
+UNESCO Lebanon,https://www.unesco.org/en/newsroom,UNESCO_Lebanon.xlsx,"click-pagination driver (JS ""Load more"" link"," a.use-ajax onclick=""window.Unesco.clickLoadMore(this)""", AJAX-appends results) - switched from https://www.unesco.org/en/countries/lb/latestnews (consistently 500'd/bot-challenged from this network). NOT Lebanon-scoped - global newsroom, same tradeoff as IOM's global /news
+ESCWA,https://www.unescwa.org/news,ESCWA.xlsx,
+ILO Lebanon / Arab States,https://www.ilo.org/regions-and-countries/arab-states/lebanon,ILO_Lebanon_Arab_States.xlsx,
+UNFPA,https://www.unfpa.org/news,UNFPA.xlsx,global news only - no dedicated Lebanon feed found
+UNIDO,https://www.unido.org/news,UNIDO.xlsx,global news only - no dedicated Lebanon feed found
+World Bank - Lebanon,https://www.worldbank.org/en/news/all?countrycode_exact=LB&apilang=en&lang_exact=English,World_Bank_Lebanon.xlsx,"client-rendered ""Load More"" list - Selenium fallback will only capture the first batch that loads"
+IMF - Lebanon,https://www.imf.org/en/countries/lbn,IMF_Lebanon.xlsx,
+European Union Delegation to Lebanon,https://www.eeas.europa.eu/eeas/press-material_en?f%5B0%5D=press_site%3ALebanon&s=203&page=0,EU_Delegation_Lebanon.xlsx,force_selenium - results grid loads via JS/AJAX
+USAID / U.S. Embassy Lebanon,https://lb.usembassy.gov/news/,USAID_US_Embassy_Lebanon.xlsx,
+EBRD,https://www.ebrd.com/news?1=1&filterCountry=Lebanon,EBRD.xlsx,click-pagination driver (li[data-page], 695 pages) - filterCountry param may be ignored by the JS widget, verify results are actually Lebanon-specific
+Agence Francaise de Developpement - Lebanon,https://www.afd.fr/en/news?location%5B77%5D=77&words=,AFD_Lebanon.xlsx,
+GIZ Lebanon,https://www.giz.de/en/regions/asia/lebanon,GIZ_Lebanon.xlsx,
+European Investment Bank,https://www.eib.org/en/press/all/index,European_Investment_Bank.xlsx,global newsroom - filter for Lebanon manually
+Islamic Development Bank,https://www.isdb.org/news,Islamic_Development_Bank.xlsx,global news only - no dedicated Lebanon feed found
+National News Agency - Ministry of Information,https://www.nna-leb.gov.lb/ar/latest-news,National_News_Agency.xlsx,click-pagination driver (Previous/Next buttons, no href); 22229 pages total - use --max-pages to limit a run
+Ministry of Public Health,https://www.moph.gov.lb/ar/Media/news,Ministry_of_Public_Health.xlsx,
+Ministry of Environment,https://moe.gov.lb/للحصول-على-المعلومات/الاخبار-والنشاطات.aspx,Ministry_of_Environment.xlsx,"old ""www"" URL was a stale mirror with a mismatched TLS cert (hostname mismatch on www.moe.gov.lb) that forced every fetch to fail/fall back to Selenium's SSL-warning interstitial - real live site has no ""www"" and a distinct news listing page at this URL (2026 content); common.py also gained READ_MORE_TEXT_PATTERN since this site only hyperlinks each card's short ""read more"" label", not the headline
+Ministry of Agriculture,http://www.agriculture.gov.lb/Media/News,Ministry_of_Agriculture.xlsx,no_selenium - same failure mode as Ministry_of_Industry.py/Ministry_of_Public_Works_and_Transport.py: static fetch already has 10 real headline links (h2-wrapped) plus a real numbered pager (2569 results/257 pages), but the site's old bespoke scraper forced Selenium unconditionally, whose render comes back broken (1 link," href=""#"") - dropped the custom Selenium wrapper", now uses common.run_scrape() like every other site
+Ministry of Economy and Trade,https://economy.gov.lb/ar/news,Ministry_of_Economy_and_Trade.xlsx,"?page=N pager, slow server (60s timeout)"
+Ministry of Social Affairs,https://www.socialaffairs.gov.lb/news,Ministry_of_Social_Affairs.xlsx,
+Ministry of Labor,https://www.labor.gov.lb/AllNews.aspx?pub=1,Ministry_of_Labor.xlsx,no pager on the page (checked 2026-10-16): latest 10 only; use --backfill N for older newsids, unconfirmed selector - same template as MFA/TRA); LatestNews.aspx 404'd
+Ministry of Foreign Affairs and Emigrants,https://mfa.gov.lb/arabic/news,Ministry_of_Foreign_Affairs.xlsx,click-pagination driver (ASP.NET postback pager)
+Ministry of Finance,https://www.finance.gov.lb/ar-lb,Ministry_of_Finance.xlsx,"site shows an empty protection page even in a normal browser (checked 2026-10-16) - reported as BLOCKED, retried every run"," one base64-token href) is blocking Fatima's actual runs on both static and headless-Selenium fetches - now recognized by common.py's is_bot_challenge_page() instead of silently logging ""0 links""", trying force_visible_browser next since this looks like IP/session-based bot detection rather than a broken headless render
+Ministry of Interior and Municipalities,https://moim.gov.lb/latest-news/,Ministry_of_Interior_and_Municipalities.xlsx,
+Ministry of Culture,http://culture.gov.lb/ar/News,Ministry_of_Culture.xlsx,
+Ministry of Tourism,https://mot.gov.lb/en/news/,Ministry_of_Tourism.xlsx,"news section exists but has no published articles yet (""coming soon"")"
+Ministry of Industry,http://www.industry.gov.lb/Media/News,Ministry_of_Industry.xlsx,no_selenium - Selenium (both headless AND force_visible_browser) comes back with a near-empty shell on every page of this site, including page 1 which a plain static request renders perfectly (confirmed in scrape_log.txt, 2026-07-21 runs) - not a headless-fingerprint issue since visible mode failed identically, so Selenium is disabled entirely and the static fetch is always trusted
+Ministry of Justice,https://www.justice.gov.lb/index.php/news-announcements/2,Ministry_of_Justice.xlsx,pagination beyond homepage carousel not yet confirmed live
+Ministry of Public Works and Transport,http://www.mopw.gov.lb/Media/News,Ministry_of_Public_Works_and_Transport.xlsx,no_selenium - News has only 1 item; also crawls Announcements /media/news-(1) and Decisions /media/news-(2), but was flagged thin and escalated to Selenium, whose headless render comes back as a near-empty shell (just <title>," one stray href=""#"") on every page (confirmed in scrape_log.txt", 2026-07-15/21/22 runs) - Selenium disabled entirely, static fetch always trusted
+Ministry of Energy and Water,https://www.energyandwater.gov.lb/ar/listing/newsroom/news?l=3,Ministry_of_Energy_and_Water.xlsx,click-pagination driver (Angular articlesCtrl.loadArticles()," href=""javascript:;"")"
+Ministry of Education and Higher Education,https://www.mehe.gov.lb/ar/media-center/news,Ministry_of_Education_and_Higher_Education.xlsx,pagination not yet confirmed live
+Ministry of Telecommunications / TRA,https://www.tra.gov.lb/News,Ministry_of_Telecommunications_TRA.xlsx,custom GridView click-pagination driver
+Ministry of Youth and Sports,https://www.facebook.com/moysleb/,Ministry_of_Youth_and_Sports.xlsx,facebook_only - script cannot scrape Facebook, see README
+Lebanese Presidency,https://www.presidency.gov.lb/media,Lebanese_Presidency.xlsx,"listing ?page=N, articles /media/news/<id> (checked 2026-10-16)"
