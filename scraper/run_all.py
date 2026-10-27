@@ -21,6 +21,10 @@ Real runs:
     python run_all.py --skip National_News_Agency IOM
     python run_all.py --max-pages 20 --max-articles 50 --delay 2
     python run_all.py --list                       # just list the site scripts
+    python run_all.py --incremental --daily-dir scrapes/2026-10-27
+                                                   # also copy this run's NEW articles into
+                                                   # scrapes/2026-10-27/<Org>.xlsx (used by the
+                                                   # daily GitHub Actions run)
 
 --only / --skip accept the file name with or without ".py", any letter case,
 or just part of the name (e.g. --only ministry_of runs all ministries).
@@ -66,6 +70,27 @@ def count_rows(xlsx_path):
         return -1
 
 
+def copy_new_rows(src_path, first_new_row, dest_path):
+    """Copy rows first_new_row..end of src_path (plus its header row) into a new
+    workbook at dest_path. Used by --daily-dir to keep one folder per run that
+    holds only the articles found in that run."""
+    from openpyxl import Workbook, load_workbook
+    src = load_workbook(src_path, read_only=True)
+    ws_src = src.active
+    wb = Workbook()
+    ws = wb.active
+    ws.title = ws_src.title or "Articles"
+    copied = 0
+    for i, row in enumerate(ws_src.iter_rows(values_only=True), 1):
+        if i == 1 or i >= first_new_row:
+            ws.append(list(row))
+            copied += i != 1
+    src.close()
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    wb.save(dest_path)
+    return copied
+
+
 def matches(script, names):
     strip = lambda x: x[:-3] if x.endswith(".py") else x
     s = strip(script.lower())
@@ -93,6 +118,9 @@ def main():
     p.add_argument("--timeout", type=int, default=None,
                    help="Max minutes per site before it is stopped (default 240, or 10 in --test).")
     p.add_argument("--list", action="store_true", help="List the site scripts and exit.")
+    p.add_argument("--daily-dir", default=None,
+                   help="Also save each site's NEW articles from this run into this folder "
+                        "(relative to the repo root), e.g. scrapes/2026-10-27.")
     args = p.parse_args()
 
     scripts = sorted(f for f in os.listdir(SITES_DIR) if f.endswith(".py") and not f.startswith("_"))
@@ -172,6 +200,13 @@ def main():
 
         after = count_rows(out_path)
         new_rows = after - before if before >= 0 and after >= 0 else 0
+        if args.daily_dir and new_rows > 0 and not (args.test or args.dry_run):
+            daily_path = os.path.join(NEWS_DIR, args.daily_dir, out_file)
+            try:
+                n = copy_new_rows(out_path, before + 2, daily_path)
+                print(f"Saved {n} new article(s) to {daily_path}")
+            except Exception as exc:
+                print(f"(Could not write daily file {daily_path}: {exc})")
         info = {}
         if os.path.exists(result_json) and os.path.getmtime(result_json) >= t0 - 1:
             try:
@@ -261,6 +296,10 @@ def main():
             for r in results:
                 w.writerow(dict(r, run_at=now))
         print(f"Summary saved to {summary_path}")
+        if args.daily_dir and not (args.test or args.dry_run):
+            daily_dir = os.path.join(NEWS_DIR, args.daily_dir)
+            os.makedirs(daily_dir, exist_ok=True)
+            shutil.copy(summary_path, os.path.join(daily_dir, "run_summary.csv"))
     except Exception as exc:
         print(f"(Could not write summary file: {exc})")
     print("Full log: scrape_log" + ("_test" if args.test else "") + ".txt")
