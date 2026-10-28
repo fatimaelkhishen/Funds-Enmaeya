@@ -1,29 +1,20 @@
 name: Daily Lebanon News Scrape
- 
-# Runs the scraper on GitHub's own servers - your computer does not need to be on.
-# - Scheduled: every day at 05:00 UTC (08:00 Beirut in summer, 07:00 in winter;
-#   cron is always UTC and can't follow Beirut's daylight-saving change).
-# - Also runnable any time by hand: repo's "Actions" tab -> this workflow -> "Run workflow".
-# Each run:
-#   - adds new articles to the main <Org>.xlsx files in the repo root (full history), and
-#   - creates scrapes/YYYY-MM-DD/ holding ONLY that day's new articles (one .xlsx per
-#     site that had something new) plus run_summary.csv for that run.
+
+# Runs every day at 05:00 UTC (08:00 Beirut summer / 07:00 winter), or by hand
+# from the Actions tab. Each run updates the main <Org>.xlsx files and creates
+# scrapes/YYYY-MM-DD/ with ONLY that day's new articles + run_summary.csv.
 on:
   schedule:
     - cron: '0 5 * * *'
   workflow_dispatch: {}
- 
-# Needed so the built-in token can push the updated files back to this repo.
-# (Also requires "Read and write permissions" to be turned on once under
-# Settings -> Actions -> General -> Workflow permissions - see README_GITHUB_ACTIONS.md.)
+
 permissions:
   contents: write
- 
-# Never let two runs overlap (e.g. a manual run while the daily one is going).
+
 concurrency:
   group: news-scrape
   cancel-in-progress: false
- 
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -31,31 +22,33 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
- 
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
- 
+
       - name: Install Python dependencies
         run: pip install -r scraper/requirements.txt
- 
+
       - name: Confirm Chrome is available (for JS-rendered sites)
         run: google-chrome --version
- 
+
       - name: Pick today's folder name (Beirut date)
         run: echo "RUN_DATE=$(TZ=Asia/Beirut date +%Y-%m-%d)" >> "$GITHUB_ENV"
- 
+
       - name: Run all scrapers
-        run: python scraper/run_all.py --incremental --delay 1.5 --daily-dir "scrapes/$RUN_DATE"
- 
+        run: python scraper/run_all.py --incremental --delay 1.5 --timeout 20 --daily-dir "scrapes/$RUN_DATE"
+
       - name: Commit and push new articles
         if: always()
         run: |
           git config user.name "news-scraper-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -- "*.xlsx" scrapes scraper/state scraper/scrape_log.txt scraper/run_summary.csv
+          git add -- "*.xlsx" || true
+          for p in scrapes scraper/state scraper/scrape_log.txt scraper/run_summary.csv; do
+            [ -e "$p" ] && git add -- "$p"
+          done
           git diff --cached --quiet || git commit -m "Daily news scrape: $RUN_DATE"
           git pull --rebase --autostash || true
           git push
- 
