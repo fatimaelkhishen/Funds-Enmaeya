@@ -98,6 +98,12 @@ except ValueError:
 # of a big run.
 SAVE_EVERY = 10
 
+# Give up on a site for this run after this many article fetches in a row came
+# back as bot-check/CAPTCHA/error pages - the site is blocking us right now, so
+# trying the remaining links only burns time. Those links stay un-visited and
+# are retried on the next run. 0 = never give up.
+MAX_CHALLENGE_STREAK = 5
+
 # NOTE (2026-07-21): this used to end in " EnmaeyaNewsArchiver/1.0" - a custom
 # product token appended after an otherwise-real Chrome UA string. That tail
 # is exactly the kind of thing a UA-sniffing WAF/edge (Akamai etc., common on
@@ -1133,14 +1139,18 @@ def run_scrape(org, start_url, output_filename, max_pages=DEFAULT_MAX_PAGES, max
     rp = get_robot_parser(start_url)
     wb, ws = open_or_create_workbook(out_path)
     unsaved = [0]
+    challenge_streak = [0]
 
     def flush():
         wb.save(out_path)
         save_state(org_key, visited_articles)
         unsaved[0] = 0
 
+    def site_blocked():
+        return bool(MAX_CHALLENGE_STREAK and challenge_streak[0] >= MAX_CHALLENGE_STREAK)
+
     def limit_reached():
-        return bool(max_articles and stats["saved"] >= max_articles)
+        return bool(max_articles and stats["saved"] >= max_articles) or site_blocked()
 
     def process_links(links):
         for link in links:
@@ -1163,8 +1173,15 @@ def run_scrape(org, start_url, output_filename, max_pages=DEFAULT_MAX_PAGES, max
             if is_bot_challenge_page(art_html):
                 # Don't mark as visited - worth retrying on a future run.
                 stats["challenges"] += 1
+                challenge_streak[0] += 1
                 log.warning("[%s] Bot/CAPTCHA/error page for article, skipping (will retry later): %s", org, link)
+                if site_blocked():
+                    log.warning("[%s] %d bot-check pages in a row - the site is blocking us right now, "
+                                "giving up on it for this run (unscraped links are retried next run).",
+                                org, challenge_streak[0])
+                    return
                 continue
+            challenge_streak[0] = 0
             visited_articles.add(link)
             title, date, text = extract_article(art_html, link)
             if not text or len(text) < 50:
@@ -1226,6 +1243,8 @@ def run_scrape(org, start_url, output_filename, max_pages=DEFAULT_MAX_PAGES, max
             process_links(new_links)
             flush()
 
+            if site_blocked():
+                break
             if limit_reached():
                 log.info("[%s] Reached --max-articles limit (%d).", org, max_articles)
                 break

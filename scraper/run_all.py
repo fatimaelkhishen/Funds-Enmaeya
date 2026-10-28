@@ -160,6 +160,12 @@ def main():
         shutil.rmtree(os.path.join(SCRAPER_DIR, "state_dry"), ignore_errors=True)
     if args.incremental and not args.dry_run:
         env["SCRAPER_STOP_AFTER_KNOWN_PAGES"] = "2"
+        # New articles are always on the first listing pages (newest first), so a
+        # daily/weekly run never needs to walk deep into a site's archive. Without
+        # this cap a site whose new links keep failing (bot-check pages) never
+        # builds a "nothing new" streak and walks up to 300 pages.
+        if max_pages is None:
+            max_pages = 5
     if max_pages is not None:
         extra += ["--max-pages", str(max_pages)]
     if max_articles is not None:
