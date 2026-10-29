@@ -1,0 +1,12 @@
+{
+ "org": "Ministry of Social Affairs",
+ "saved": 0,
+ "links_found": 0,
+ "attempted": 0,
+ "challenges": 0,
+ "fetch_failures": 0,
+ "pages": 1,
+ "status": "error",
+ "message": "listing page could not be fetched",
+ "finished_at": "2026-10-29T11:37:28.479077+00:00"
+}

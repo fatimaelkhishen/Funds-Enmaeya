@@ -1,0 +1,12 @@
+{
+ "org": "Ministry of Labor",
+ "saved": 0,
+ "links_found": 0,
+ "attempted": 0,
+ "challenges": 1,
+ "fetch_failures": 0,
+ "pages": 1,
+ "status": "blocked",
+ "message": "listing page is a bot-challenge/error page",
+ "finished_at": "2026-10-29T11:30:45.658160+00:00"
+}
