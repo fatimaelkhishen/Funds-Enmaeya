@@ -1,12 +1,12 @@
 {
  "org": "United Nations in Lebanon",
- "saved": 2,
- "links_found": 36,
- "attempted": 2,
+ "saved": 0,
+ "links_found": 24,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-10-29T12:11:25.941030+00:00"
+ "finished_at": "2026-10-30T11:39:23.929805+00:00"
 }

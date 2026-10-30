@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Public Works and Transport",
- "saved": 62,
- "links_found": 63,
- "attempted": 62,
+ "saved": 0,
+ "links_found": 33,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 8,
+ "pages": 5,
  "status": "ok",
  "message": "",
- "finished_at": "2026-10-29T11:34:07.086913+00:00"
+ "finished_at": "2026-10-30T11:26:51.116262+00:00"
 }

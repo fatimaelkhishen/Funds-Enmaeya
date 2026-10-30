@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Economy and Trade",
- "saved": 42,
- "links_found": 50,
- "attempted": 50,
- "challenges": 8,
+ "saved": 0,
+ "links_found": 20,
+ "attempted": 0,
+ "challenges": 0,
  "fetch_failures": 0,
- "pages": 5,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-10-29T11:13:20.047091+00:00"
+ "finished_at": "2026-10-30T11:18:06.410084+00:00"
 }

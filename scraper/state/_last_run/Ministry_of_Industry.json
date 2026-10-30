@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Industry",
- "saved": 19,
- "links_found": 40,
- "attempted": 19,
+ "saved": 1,
+ "links_found": 30,
+ "attempted": 1,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 4,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-10-29T11:22:14.058276+00:00"
+ "finished_at": "2026-10-30T11:25:17.073171+00:00"
 }
