@@ -1,12 +1,12 @@
 {
  "org": "Islamic Development Bank",
- "saved": 1,
- "links_found": 30,
- "attempted": 1,
+ "saved": 0,
+ "links_found": 20,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-01T11:50:50.734304+00:00"
+ "finished_at": "2026-11-02T13:04:00.650051+00:00"
 }

@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Agriculture",
- "saved": 5,
- "links_found": 31,
- "attempted": 5,
+ "saved": 0,
+ "links_found": 20,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-01T11:51:31.289494+00:00"
+ "finished_at": "2026-11-02T13:04:22.590978+00:00"
 }
