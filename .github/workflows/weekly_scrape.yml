@@ -1,8 +1,5 @@
 name: Daily Lebanon News Scrape
 
-# Runs every day at 05:00 UTC (08:00 Beirut summer / 07:00 winter), or by hand
-# from the Actions tab. Each run updates the main <Org>.xlsx files and creates
-# scrapes/YYYY-MM-DD/ with ONLY that day's new articles + run_summary.csv.
 on:
   schedule:
     - cron: '0 5 * * *'
@@ -58,4 +55,23 @@ jobs:
           done
           git diff --cached --quiet || git commit -m "Daily news scrape: $RUN_DATE"
           git pull --rebase --autostash || true
+          git push
+
+      - name: Update dashboard
+        if: always()
+        continue-on-error: true
+        env:
+          DASHBOARD_TOKEN: ${{ secrets.DASHBOARD_TOKEN }}
+        run: |
+          f="scrapes/$RUN_DATE/AI-Gen/Funding_$RUN_DATE.xlsx"
+          if [ -z "$DASHBOARD_TOKEN" ] || [ ! -f "$f" ]; then echo "Nothing to send"; exit 0; fi
+          git clone --depth 1 "https://x-access-token:${DASHBOARD_TOKEN}@github.com/AyaAntar2004/enmaeyaFunds.git" "$RUNNER_TEMP/dashboard"
+          mkdir -p "$RUNNER_TEMP/dashboard/daily" && cp "$f" "$RUNNER_TEMP/dashboard/daily/"
+          cd "$RUNNER_TEMP/dashboard"
+          pip install -q -r requirements.txt
+          python sync_daily.py
+          git config user.name "news-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add daily data.json downloads/funding-data.xlsx
+          git diff --cached --quiet || git commit -m "Daily funding update: $RUN_DATE"
           git push
