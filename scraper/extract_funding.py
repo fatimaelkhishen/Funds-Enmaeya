@@ -6,7 +6,7 @@ Reads one day's scrape folder (scrapes/YYYY-MM-DD/<Org>.xlsx, written by
 run_all.py --daily-dir) and builds ONE Excel file with only the
 funding-related articles, in the "Lebanon Ministry Funding" template layout:
 
-    scrapes/YYYY-MM-DD/Funding_YYYY-MM-DD.xlsx
+    scrapes/YYYY-MM-DD/AI-Gen/Funding_YYYY-MM-DD.xlsx
 
 How it decides what goes in:
   1. Free keyword filter (English / French / Arabic funding words: grant,
@@ -323,7 +323,7 @@ def main():
 
     run_date = args.date or beirut_today()
     day_dir = os.path.join(args.scrapes_dir, run_date)
-    out_path = os.path.join(day_dir, f"Funding_{run_date}.xlsx")
+    out_path = os.path.join(day_dir, "AI-Gen", f"Funding_{run_date}.xlsx")
     if not os.path.isdir(day_dir):
         print(f"No scrape folder for {run_date} ({day_dir}) - nothing to do.")
         return
