@@ -40,6 +40,13 @@ jobs:
       - name: Run all scrapers
         run: python scraper/run_all.py --incremental --delay 1.5 --timeout 20 --daily-dir "scrapes/$RUN_DATE"
 
+      - name: Extract funding articles (AI)
+        if: always()
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scraper/extract_funding.py --date "$RUN_DATE"
+
       - name: Commit and push new articles
         if: always()
         run: |
