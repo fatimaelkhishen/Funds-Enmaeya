@@ -1,0 +1,39 @@
+name: Funding extraction only
+
+# Re-runs just the AI funding step for a day that was already scraped.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Day to process (YYYY-MM-DD), must exist under scrapes/'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-scrape
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests openpyxl beautifulsoup4 trafilatura
+      - name: Extract funding articles (AI)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scraper/extract_funding.py --date "${{ inputs.date }}"
+      - name: Commit result
+        run: |
+          git config user.name "news-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scrapes
+          git diff --cached --quiet || git commit -m "Funding extraction: ${{ inputs.date }}"
+          git pull --rebase --autostash || true
+          git push
