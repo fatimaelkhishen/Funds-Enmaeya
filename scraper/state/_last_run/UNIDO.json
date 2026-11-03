@@ -1,12 +1,12 @@
 {
  "org": "UNIDO",
- "saved": 4,
- "links_found": 20,
- "attempted": 10,
- "challenges": 6,
+ "saved": 0,
+ "links_found": 0,
+ "attempted": 0,
+ "challenges": 1,
  "fetch_failures": 0,
  "pages": 1,
- "status": "ok",
- "message": "",
- "finished_at": "2026-11-02T13:20:58.018334+00:00"
+ "status": "blocked",
+ "message": "listing page is a bot-challenge/error page",
+ "finished_at": "2026-11-03T13:00:47.073186+00:00"
 }
