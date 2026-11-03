@@ -49,6 +49,8 @@ jobs:
         run: |
           f="scrapes/$RUN_DATE/AI-Gen/Funding_$RUN_DATE.xlsx"
           if [ -z "$DASHBOARD_TOKEN" ] || [ ! -f "$f" ]; then echo "Nothing to send"; exit 0; fi
+          TOKEN=$(printf '%s' "$DASHBOARD_TOKEN" | tr -d '[:space:]')
+          git clone --depth 1 "https://x-access-token:${TOKEN}@github.com/AyaAntar2004/enmaeyaFunds.git" "$RUNNER_TEMP/dashboard"
           git clone --depth 1 "https://x-access-token:${DASHBOARD_TOKEN}@github.com/AyaAntar2004/enmaeyaFunds.git" "$RUNNER_TEMP/dashboard"
           mkdir -p "$RUNNER_TEMP/dashboard/daily" && cp "$f" "$RUNNER_TEMP/dashboard/daily/"
           cd "$RUNNER_TEMP/dashboard"
