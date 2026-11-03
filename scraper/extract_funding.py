@@ -78,7 +78,29 @@ FUNDING_KEYWORDS = re.compile(
     re.IGNORECASE,
 )
 
+# The Lebanese ministries the funding dashboard knows (same names as MINISTRY_MAP in
+# the dashboard repo's build_data.py). The model must pick from this list, so names
+# always match the dashboard. Records with no Lebanese ministry are dropped.
+LEBANESE_MINISTRIES = [
+    "Ministry of Agriculture", "Ministry of Culture", "Ministry of Economy and Trade",
+    "Ministry of Education and Higher Education", "Ministry of Energy and Water",
+    "Ministry of Environment", "Ministry of Finance", "Ministry of Foreign Affairs and Emigrants",
+    "Ministry of Industry", "Ministry of Information", "Ministry of Interior and Municipalities",
+    "Ministry of Justice", "Ministry of Labour", "Ministry of Public Health",
+    "Ministry of Public Works and Transport", "Ministry of Social Affairs",
+    "Ministry of State for Administrative Development",
+    "Ministry of State for Administrative Reform (OMSAR)", "Ministry of Telecommunications",
+    "Ministry of Tourism", "Ministry of National Defense",
+]
+NO_MINISTRY = "Not specified"
+
 SYSTEM_PROMPT = """You extract funding information about Lebanon from one news article.
+
+ONLY LEBANON: the funding must be for a project, programme, institution or population IN
+LEBANON. Set is_lebanon=false for anything about other countries, regions (e.g. Africa, the
+EU, small island states), or global/multi-country programmes that only mention Lebanon in
+passing. A Lebanon-specific component of a regional programme counts only if the article
+describes what happens in Lebanon.
 
 An article counts as FUNDING if it reports money or in-kind resources being granted, loaned,
 donated, allocated, disbursed, pledged, signed or launched for a project, programme, institution
@@ -91,10 +113,15 @@ If the article is not about funding, return is_funding=false and an empty record
 If it is, return one record per distinct funded project/initiative in the article (usually one).
 
 Field rules (write values in English even if the article is Arabic or French):
-- ministry: the Lebanese ministry involved or benefiting, using its full English name
-  (e.g. "Ministry of Public Health", "Ministry of Social Affairs", "Ministry of Education and
-  Higher Education", "Ministry of Agriculture", "Ministry of Energy and Water"). "Not specified"
-  if no ministry is involved.
+- ministry: the ONE Lebanese government ministry most involved in or benefiting from the
+  funding, chosen from the allowed list. If several are involved, pick the main one. Foreign
+  ministries (e.g. a donor country's foreign ministry) are funders, never the ministry.
+  Use "Not specified" if no Lebanese ministry is involved. Ministry mapping hints: army /
+  Lebanese Armed Forces -> Ministry of National Defense; police / ISF / civil defense /
+  municipalities -> Ministry of Interior and Municipalities; hospitals / medicines -> Ministry
+  of Public Health; schools / universities -> Ministry of Education and Higher Education;
+  electricity / water -> Ministry of Energy and Water; farmers / forests -> Ministry of
+  Agriculture; refugees / social protection / cash assistance -> Ministry of Social Affairs.
 - project: short name of the project / initiative.
 - status: one of Announced, Signed, Planned, Ongoing, Completed.
 - funders: donor(s) providing the money, comma-separated, or "Not specified".
@@ -125,9 +152,10 @@ RESPONSE_SCHEMA = {
     "schema": {
         "type": "object",
         "additionalProperties": False,
-        "required": ["is_funding", "records"],
+        "required": ["is_funding", "is_lebanon", "records"],
         "properties": {
             "is_funding": {"type": "boolean"},
+            "is_lebanon": {"type": "boolean"},
             "records": {
                 "type": "array",
                 "items": {
@@ -136,6 +164,7 @@ RESPONSE_SCHEMA = {
                     "required": RECORD_FIELDS,
                     "properties": {
                         **{f: {"type": "string"} for f in RECORD_FIELDS},
+                        "ministry": {"type": "string", "enum": LEBANESE_MINISTRIES + [NO_MINISTRY]},
                         "status": {"type": "string",
                                    "enum": ["Announced", "Signed", "Planned", "Ongoing", "Completed"]},
                         "confidence": {"type": "string", "enum": ["High", "Medium", "Low"]},
@@ -368,7 +397,13 @@ def main():
                 break
             continue
         recs = (result.get("records") or []) if result.get("is_funding") else []
-        print(f"  [{i}/{len(candidates)}] {'FUNDING' if recs else 'no     '} [{a['feed']}] {a['title'][:80]}")
+        if recs and not result.get("is_lebanon"):
+            verdict, recs = "not Lebanon", []
+        else:
+            kept = [r for r in recs if r.get("ministry") in LEBANESE_MINISTRIES]
+            verdict = "FUNDING" if kept else ("no ministry" if recs else "no")
+            recs = kept
+        print(f"  [{i}/{len(candidates)}] {verdict:11s} [{a['feed']}] {a['title'][:80]}")
         if recs:
             funding_articles += 1
         for rec in recs:
