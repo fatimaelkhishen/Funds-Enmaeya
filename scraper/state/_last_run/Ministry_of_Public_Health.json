@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Public Health",
- "saved": 0,
- "links_found": 102,
- "attempted": 5,
- "challenges": 5,
+ "saved": 76,
+ "links_found": 510,
+ "attempted": 76,
+ "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
- "status": "blocked",
- "message": "every article came back as a bot-challenge/error page",
- "finished_at": "2026-11-03T12:50:41.164272+00:00"
+ "pages": 5,
+ "status": "ok",
+ "message": "",
+ "finished_at": "2026-11-04T13:04:53.758854+00:00"
 }
