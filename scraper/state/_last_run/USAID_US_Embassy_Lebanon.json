@@ -1,12 +1,12 @@
 {
  "org": "USAID / U.S. Embassy Lebanon",
- "saved": 1,
- "links_found": 27,
- "attempted": 1,
+ "saved": 0,
+ "links_found": 18,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-04T13:14:33.213145+00:00"
+ "finished_at": "2026-11-05T13:19:59.818273+00:00"
 }
