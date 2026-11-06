@@ -12,10 +12,12 @@ How it decides what goes in:
   1. Free keyword filter (English / French / Arabic funding words: grant,
      loan, donation, funded, هبة, تمويل, قرض, subvention, ...). Articles with
      none of these words are skipped without any AI call.
-  2. Each remaining article goes to a small OpenAI model, which says whether
-     it is really about funding and, if so, fills in the template columns.
-     If the scraped text is very short, the article link is opened again to
-     get the full page before asking the model.
+  2. Each remaining article's page is opened again, so the model also sees the
+     parts the scraper leaves out (dateline, page dates, sidebars, "project
+     details" boxes with budgets and start/end dates).
+  3. A small OpenAI model reads the scraped text + live page, says whether it is
+     about funding in Lebanon and, if so, fills in the template columns. Only
+     Lebanon, and only records with a Lebanese ministry from the dashboard's list.
 
 Needs the OPENAI_API_KEY environment variable (a GitHub secret in the daily
 workflow). Without it the script writes nothing and exits normally.
@@ -55,6 +57,7 @@ COLUMNS = [
     "Region", "Funding Date", "Date Basis", "Date Evidence (from article)", "Project Period",
     "In 2025-26?", "Published Date", "Description", "Source / Link", "Enmaeya Reporting Link",
     "Confidence", "Source Feed", "Origin", "Source Checked", "Live-page Evidence", "Funding Type",
+    "Sector",  # extra column after the 22 template columns: the dashboard sector for this project
 ]
 COL_WIDTHS = {
     "Ministry": 26, "Project / Initiative": 40, "Status": 12, "Funder(s)": 30, "Amount / Scale": 20,
@@ -62,6 +65,7 @@ COL_WIDTHS = {
     "Date Evidence (from article)": 40, "Project Period": 16, "In 2025-26?": 12, "Published Date": 13,
     "Description": 70, "Source / Link": 14, "Enmaeya Reporting Link": 14, "Confidence": 11,
     "Source Feed": 24, "Origin": 12, "Source Checked": 18, "Live-page Evidence": 40, "Funding Type": 18,
+    "Sector": 18,
 }
 
 # Words that must appear for an article to be worth an AI call. Kept broad on
@@ -94,6 +98,29 @@ LEBANESE_MINISTRIES = [
 ]
 NO_MINISTRY = "Not specified"
 
+# The dashboard's six sectors (ids from data.json sectorFilters) and what belongs in each,
+# taken from the subtopics on the dashboard's funding-network page. Shared word-for-word with
+# classify_sectors.py in the dashboard repo so old and new records are judged the same way.
+SECTORS = {
+    "Health": "hospitals, primary and community health care, medicines and medical equipment, "
+              "public health, disease control, vaccination, mental health, digital health",
+    "Education": "schools, universities, access to education, crisis/emergency education, "
+                 "teachers, vocational and technical training (TVET), future skills, citizenship",
+    "Economy": "economic recovery, jobs and employment, livelihoods, entrepreneurship, SMEs, "
+               "private sector, trade, industry, investment, finance, tourism, agricultural value "
+               "chains and farmer incomes",
+    "Environment": "climate, water and wastewater, waste management, biodiversity, forests and "
+                   "land, clean/renewable energy, electricity sector, sustainable agriculture and "
+                   "natural resources",
+    "Artificial Intelligence": "AI, digital government and e-services, digital transformation of "
+                               "public administration, data systems, telecoms, AI skills, "
+                               "innovation and tech",
+    "Development": "governance, institutions, security forces and justice, social protection and "
+                   "social inclusion, humanitarian, food and cash assistance, shelter, refugees, "
+                   "youth, gender, municipalities, reconstruction and general recovery",
+}
+SECTOR_RULES = "\n".join(f"  - {k}: {v}" for k, v in SECTORS.items())
+
 SYSTEM_PROMPT = """You extract funding information about Lebanon from one news article.
 
 ONLY LEBANON: the funding must be for a project, programme, institution or population IN
@@ -112,6 +139,16 @@ NOT funding.
 If the article is not about funding, return is_funding=false and an empty records list.
 If it is, return one record per distinct funded project/initiative in the article (usually one).
 
+INPUT: you get the SCRAPED ARTICLE TEXT and, when the page could be opened again, the LIVE PAGE
+(page metadata dates plus all visible text: header, dateline, sidebars, "project details" or
+"related project" boxes with budgets, donors and start/end dates). Use BOTH. Fill every field the
+article or page supports: read the whole text, including datelines ("BEIRUT, 18 February 2020",
+"18/02/2020"), Arabic dates ("بتاريخ 16/3/2021", "الأربعاء 22 تموز 2026"), and project boxes.
+Leave a field empty only when neither source supports it. Never invent facts.
+
+- article_date: the article's real publication date as M/D/YYYY, from the dateline / header /
+  page metadata (prefer the date shown on the article over "last modified" metadata). "" if none.
+
 Field rules (write values in English even if the article is Arabic or French):
 - ministry: the ONE Lebanese government ministry most involved in or benefiting from the
   funding, chosen from the allowed list. If several are involved, pick the main one. Foreign
@@ -125,26 +162,46 @@ Field rules (write values in English even if the article is Arabic or French):
 - project: short name of the project / initiative.
 - status: one of Announced, Signed, Planned, Ongoing, Completed.
 - funders: donor(s) providing the money, comma-separated, or "Not specified".
-- amount: amount with currency as written (e.g. "USD 2.7 million", "EUR 45 million"), or a scale
-  ("864 metric tons of rice"), or "Not specified".
-- partners: implementing partners, comma-separated, or "" if none.
+- amount: the money for THIS project with currency (e.g. "USD 2.7 million", "EUR 45 million").
+  Look everywhere: budget, grant/loan value, "worth"/"valued at" an in-kind donation, Arabic
+  figures ("بقيمة 500 ألف دولار"), project boxes on the live page. If no money figure exists, give
+  the scale of what was provided ("864 metric tons of rice", "12 ambulances", "3,000 families").
+  "Not specified" only if neither exists.
+- partners: implementing and co-implementing organisations, comma-separated - include the
+  organisation that published the article when it implements the project (e.g. FAO, ILO, UNDP,
+  WFP), plus any NGOs, municipalities or other agencies named. "" only if none.
 - region: place in Lebanon (e.g. "Beirut", "Bekaa", "South Lebanon"), or "Lebanon" if national.
-- funding_date: date the money moved / agreement was signed / project launched, as M/D/YYYY.
-  Only if the article states it; otherwise "".
-- date_basis: "Not stated in article", "Same-day report", "In-text date", or
-  "In-text: <event>" where event is Signed, Launched, Approved, Disbursed, Announced or Handover.
-- date_evidence: short exact quote from the article supporting funding_date, or "".
-- project_period: e.g. "2025-01 -> 2026-12" or "2026 -> 2029" if stated, else "".
-- in_2025_26: "Yes" if the funding happened in 2025 or 2026, "NO - <year>" if clearly another
-  year, "Unknown" if unclear.
+- funding_date: when the money moved / the agreement was signed / the project was launched or
+  handed over, as M/D/YYYY. Work through these in order and use the first that applies:
+  1. a date given for the signing, launch, approval, disbursement, announcement or handover
+     -> date_basis "In-text: <event>" (Signed, Launched, Approved, Disbursed, Announced, Handover);
+  2. the article reports that event as happening now ("today", "on Tuesday", "signed", "launched",
+     "handed over", "inaugurated" in a news report) -> use article_date, date_basis
+     "Same-day report";
+  3. a project start date in the text or a project box -> date_basis "In-text date";
+  4. otherwise "" and date_basis "Not stated in article".
+  If only month and year are known use the 1st of the month (e.g. "March 2023" -> 3/1/2023).
+- date_basis: as above.
+- date_evidence: short exact quote (original language) supporting funding_date, or "".
+- project_period: start -> end as "YYYY-MM -> YYYY-MM" (or "YYYY -> YYYY"), from stated dates or
+  durations ("a three-year project launched in 2024" -> "2024 -> 2027"; "1 March 2023 - 30
+  September 2026" -> "2023-03 -> 2026-09"). "" if neither is stated.
+- in_2025_26: "Yes" if the funding date, or any part of the project period, falls in 2025 or
+  2026; "NO - <year>" if it is clearly entirely in another year (give the funding/start year);
+  "Unknown" only if no date at all is available.
+- live_page_evidence: if a fact you used (amount, date, period, donor) came from the LIVE PAGE
+  rather than the article text, a short exact quote of it; otherwise "".
 - description: 1-2 sentence English summary of who funds what, for whom, and how much.
 - confidence: High (all key facts explicit), Medium (some inferred), Low (vague/partial).
 - funding_type: "External donor", "Ministry budget", "Unknown".
-"""
+- sector: the ONE dashboard sector that best matches what the PROJECT does (not which ministry
+  runs it). E.g. a job-training project with the Ministry of Social Affairs is Economy; a digital
+  farmers' registry is Artificial Intelligence; a forest project is Environment. Sectors:
+""" + SECTOR_RULES + "\n"
 
 RECORD_FIELDS = ["ministry", "project", "status", "funders", "amount", "partners", "region",
                  "funding_date", "date_basis", "date_evidence", "project_period", "in_2025_26",
-                 "description", "confidence", "funding_type"]
+                 "description", "confidence", "funding_type", "live_page_evidence", "sector"]
 
 RESPONSE_SCHEMA = {
     "name": "funding_extraction",
@@ -152,10 +209,11 @@ RESPONSE_SCHEMA = {
     "schema": {
         "type": "object",
         "additionalProperties": False,
-        "required": ["is_funding", "is_lebanon", "records"],
+        "required": ["is_funding", "is_lebanon", "article_date", "records"],
         "properties": {
             "is_funding": {"type": "boolean"},
             "is_lebanon": {"type": "boolean"},
+            "article_date": {"type": "string"},
             "records": {
                 "type": "array",
                 "items": {
@@ -167,6 +225,11 @@ RESPONSE_SCHEMA = {
                         "ministry": {"type": "string", "enum": LEBANESE_MINISTRIES + [NO_MINISTRY]},
                         "status": {"type": "string",
                                    "enum": ["Announced", "Signed", "Planned", "Ongoing", "Completed"]},
+                        "sector": {"type": "string", "enum": list(SECTORS)},
+                        "date_basis": {"type": "string", "enum": [
+                            "In-text: Signed", "In-text: Launched", "In-text: Approved",
+                            "In-text: Disbursed", "In-text: Announced", "In-text: Handover",
+                            "Same-day report", "In-text date", "Not stated in article"]},
                         "confidence": {"type": "string", "enum": ["High", "Medium", "Low"]},
                         "funding_type": {"type": "string",
                                          "enum": ["External donor", "Ministry budget", "Unknown"]},
@@ -181,7 +244,7 @@ RESPONSE_SCHEMA = {
 PRICES = {"gpt-4o-mini": (0.15, 0.60), "gpt-4.1-mini": (0.40, 1.60), "gpt-4.1-nano": (0.10, 0.40),
           "gpt-5-mini": (0.25, 2.00), "gpt-5-nano": (0.05, 0.40)}
 
-SHORT_TEXT = 400  # re-open the link when the scraped text is shorter than this
+SHORT_TEXT = 400  # use the re-opened page's main text when the scraped text is shorter than this
 
 
 def beirut_today():
@@ -235,40 +298,81 @@ def read_day_articles(day_dir):
     return articles
 
 
-def refetch_text(url):
-    """Open the article again and pull its main text. Returns '' on failure."""
+def distrust_constant_dates(articles, run_date):
+    """Some sites give every article the same date (a site-wide "last modified" or a
+    default): e.g. Ministry of Social Affairs pages all scraped as 2023-11-23, Ministry
+    of Justice as 2026-01-01. If 3+ articles from one feed share a date that is more
+    than 30 days older than the run date, that date is not trusted: it is cleared so
+    the AI reads the real date off the article/live page instead."""
+    try:
+        run = datetime.strptime(run_date, "%Y-%m-%d")
+    except ValueError:
+        return
+    groups = {}
+    for a in articles:
+        d = str(a["date"] or "")[:10]
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
+            groups.setdefault((a["feed"], d), []).append(a)
+    for (feed, d), group in groups.items():
+        if len(group) >= 3 and (run - datetime.strptime(d, "%Y-%m-%d")).days > 30:
+            print(f"  {feed}: {len(group)} articles share the date {d} - treated as unknown")
+            for a in group:
+                a["date"] = ""
+
+
+def fetch_live_page(url, max_chars):
+    """Open the article page again. Returns (main_text, page_text) - page_text is the
+    page's metadata dates plus all visible text (header, dateline, sidebars, project boxes),
+    which the scraped article text often leaves out. ('', '') on failure."""
     try:
         resp = requests.get(url, timeout=30, headers={
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                          "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"})
+                          "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+            "Accept-Language": "en,ar;q=0.8,fr;q=0.6"})
         if resp.status_code != 200 or not resp.text:
-            return ""
+            return "", ""
         html = resp.text
     except Exception:
-        return ""
+        return "", ""
+    main_text = ""
     try:
         import trafilatura
-        text = trafilatura.extract(html) or ""
-        if text:
-            return text
+        main_text = trafilatura.extract(html) or ""
     except Exception:
         pass
+    page_text = ""
     try:
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(html, "html.parser")
-        for t in soup(["script", "style", "nav", "header", "footer"]):
+        dates = []
+        for m in soup.find_all("meta"):
+            key = (m.get("property") or m.get("name") or m.get("itemprop") or "").lower()
+            if any(k in key for k in ("published", "date", "modified", "created")) and m.get("content"):
+                dates.append(f"{key}: {m['content']}")
+        for t in soup.find_all("time"):
+            if t.get("datetime"):
+                dates.append(f"<time>: {t['datetime']} ({t.get_text(' ', strip=True)[:40]})")
+        for js in soup.find_all("script", type="application/ld+json"):
+            for k, v in re.findall(r'"(datePublished|dateCreated|dateModified|startDate|endDate)"\s*:\s*"([^"]+)"',
+                                   js.string or ""):
+                dates.append(f"{k}: {v}")
+        for t in soup(["script", "style", "noscript", "svg", "nav", "footer", "form", "iframe"]):
             t.decompose()
-        return re.sub(r"\s+", " ", soup.get_text(" ")).strip()
+        visible = re.sub(r"\s+", " ", soup.get_text(" ")).strip()
+        page_text = ("Page metadata dates: " + "; ".join(dict.fromkeys(dates))[:800] + "\n\n"
+                     if dates else "") + visible[:max_chars]
     except Exception:
-        return ""
+        pass
+    return main_text, page_text
 
 
-def ask_model(api_key, model, article, text, max_chars, usage):
+def ask_model(api_key, model, article, text, page_text, max_chars, usage):
     user = (f"Source feed: {article['feed']}\n"
-            f"Published date (from the site): {article['date'] or 'unknown'}\n"
+            f"Published date (as scraped - may be wrong): {article['date'] or 'unknown'}\n"
             f"Title: {article['title']}\n"
             f"URL: {article['url']}\n\n"
-            f"Article text:\n{text[:max_chars]}")
+            f"=== SCRAPED ARTICLE TEXT ===\n{text[:max_chars]}\n\n"
+            f"=== LIVE PAGE ===\n{page_text or '(the page could not be opened again)'}")
     body = {
         "model": model,
         "messages": [{"role": "system", "content": SYSTEM_PROMPT},
@@ -346,6 +450,8 @@ def main():
                    help="Max articles sent to the AI per run (cost cap). Default 150.")
     p.add_argument("--max-chars", type=int, default=6000,
                    help="Max characters of article text sent per article. Default 6000.")
+    p.add_argument("--no-live", action="store_true",
+                   help="Don't re-open each article page (cheaper, but fewer filled-in cells).")
     p.add_argument("--dry-run", action="store_true",
                    help="No AI calls: only show which articles pass the keyword filter.")
     args = p.parse_args()
@@ -358,6 +464,7 @@ def main():
         return
 
     articles = read_day_articles(day_dir)
+    distrust_constant_dates(articles, run_date)
     candidates = [a for a in articles if FUNDING_KEYWORDS.search(f"{a['title']}\n{a['text']}")]
     print(f"{run_date}: {len(articles)} article(s) scraped, {len(candidates)} mention funding keywords.")
 
@@ -378,17 +485,16 @@ def main():
     usage = {"in": 0, "out": 0}
     rows, funding_articles, failures = [], 0, 0
     for i, a in enumerate(candidates, 1):
-        text, checked = a["text"], "Scraped text"
-        if len(text.strip()) < SHORT_TEXT and a["url"]:
-            fresh = refetch_text(a["url"])
-            if len(fresh) > len(text):
-                text, checked = fresh, "Re-fetched from source"
-            else:
-                checked = "Re-fetch failed (used scraped text)"
-        if not (text.strip() or a["title"].strip()):
+        text, page_text, checked = a["text"], "", "Scraped text only"
+        if a["url"] and not args.no_live:
+            main_text, page_text = fetch_live_page(a["url"], args.max_chars)
+            checked = "Re-checked at source" if page_text else "Fetch failed (scraped text only)"
+            if len(text.strip()) < SHORT_TEXT and len(main_text) > len(text):
+                text = main_text
+        if not (text.strip() or page_text.strip() or a["title"].strip()):
             continue
         try:
-            result = ask_model(api_key, args.model, a, text or a["title"], args.max_chars, usage)
+            result = ask_model(api_key, args.model, a, text or a["title"], page_text, args.max_chars, usage)
         except RuntimeError as exc:
             failures += 1
             print(f"  [{i}/{len(candidates)}] AI error, skipped: {a['title'][:70]} ({exc})")
@@ -406,6 +512,12 @@ def main():
         print(f"  [{i}/{len(candidates)}] {verdict:11s} [{a['feed']}] {a['title'][:80]}")
         if recs:
             funding_articles += 1
+        # Some sites give the scraper a wrong date (e.g. a "last modified" date shared by every
+        # page). Prefer the date the AI read off the article itself when it found one.
+        published = us_date(a["date"])
+        art_date = (result.get("article_date") or "").strip()
+        if re.match(r"^\d{1,2}/\d{1,2}/\d{4}$", art_date):
+            published = art_date
         for rec in recs:
             rows.append({
                 "Ministry": rec["ministry"], "Project / Initiative": rec["project"],
@@ -414,10 +526,12 @@ def main():
                 "Funding Date": rec["funding_date"], "Date Basis": rec["date_basis"],
                 "Date Evidence (from article)": rec["date_evidence"],
                 "Project Period": rec["project_period"], "In 2025-26?": rec["in_2025_26"],
-                "Published Date": us_date(a["date"]), "Description": rec["description"],
+                "Published Date": published, "Description": rec["description"],
                 "Enmaeya Reporting Link": "", "Confidence": rec["confidence"],
                 "Source Feed": a["feed"], "Origin": "Daily run", "Source Checked": checked,
-                "Live-page Evidence": "", "Funding Type": rec["funding_type"], "_url": a["url"],
+                "Live-page Evidence": rec["live_page_evidence"], "Funding Type": rec["funding_type"],
+                "Sector": rec["sector"],
+                "_url": a["url"],
             })
 
     rows.sort(key=lambda r: (r["Ministry"] == "Not specified", r["Ministry"], r["Source Feed"]))
