@@ -134,7 +134,9 @@ donated, allocated, disbursed, pledged, signed or launched for a project, progra
 or population in Lebanon (e.g. a donor grant, a World Bank loan, an EU-funded project, a handover
 of equipment or medicines, a budget allocation by a ministry). General politics, security news,
 diplomatic visits with no funding, events, statements, and reports without a funded activity are
-NOT funding.
+NOT funding. Assessments, analyses, surveys, studies and report launches (e.g. IPC food-security
+analyses, damage and loss assessments) are NOT funding, unless the article says a donor paid
+for them.
 
 If the article is not about funding, return is_funding=false and an empty records list.
 If it is, return one record per distinct funded project/initiative in the article (usually one).
@@ -146,8 +148,11 @@ article or page supports: read the whole text, including datelines ("BEIRUT, 18 
 "18/02/2020"), Arabic dates ("بتاريخ 16/3/2021", "الأربعاء 22 تموز 2026"), and project boxes.
 Leave a field empty only when neither source supports it. Never invent facts.
 
-- article_date: the article's real publication date as M/D/YYYY, from the dateline / header /
-  page metadata (prefer the date shown on the article over "last modified" metadata). "" if none.
+- article_date: the article's publication date as M/D/YYYY: the date printed on the article
+  itself (next to the title, in the dateline, or "Published on ..."). NOT the date of an event
+  described in the text, NOT "last updated/modified" dates, NOT today's date in a site header.
+  Use page metadata (datePublished, article:published_time) only if the page shows no date. ""
+  if none.
 
 Field rules (write values in English even if the article is Arabic or French):
 - ministry: the ONE Lebanese government ministry most involved in or benefiting from the
@@ -160,38 +165,41 @@ Field rules (write values in English even if the article is Arabic or French):
   electricity / water -> Ministry of Energy and Water; farmers / forests -> Ministry of
   Agriculture; refugees / social protection / cash assistance -> Ministry of Social Affairs.
 - project: short name of the project / initiative.
-- status: one of Announced, Signed, Planned, Ongoing, Completed.
+- status: one of Announced, Signed, Planned, Ongoing, Completed - from what the source says
+  about the FUNDING. A promise or commitment to provide/secure funds is "Announced"; "Signed"
+  only for a signed agreement; "Completed" only if the source says the project was completed
+  or the funds/goods were fully delivered.
 - funders: donor(s) providing the money, comma-separated, or "Not specified".
 - amount: the money for THIS project with currency (e.g. "USD 2.7 million", "EUR 45 million").
   Look everywhere: budget, grant/loan value, "worth"/"valued at" an in-kind donation, Arabic
   figures ("بقيمة 500 ألف دولار"), project boxes on the live page. If no money figure exists, give
   the scale of what was provided ("864 metric tons of rice", "12 ambulances", "3,000 families").
   "Not specified" only if neither exists.
-- partners: implementing and co-implementing organisations, comma-separated - include the
-  organisation that published the article when it implements the project (e.g. FAO, ILO, UNDP,
-  WFP), plus any NGOs, municipalities or other agencies named. "" only if none.
+- partners: implementing and co-implementing organisations the source NAMES for this project
+  (e.g. the UN agency implementing it, NGOs, municipalities, cooperatives). Do not add
+  organisations the source does not name as partners. "" if none are named.
 - region: place in Lebanon (e.g. "Beirut", "Bekaa", "South Lebanon"), or "Lebanon" if national.
-- funding_date: when the money moved / the agreement was signed / the project was launched or
-  handed over, as M/D/YYYY. Work through these in order and use the first that applies:
-  1. a date given for the signing, launch, approval, disbursement, announcement or handover
-     -> date_basis "In-text: <event>" (Signed, Launched, Approved, Disbursed, Announced, Handover);
-  2. the article reports that event as happening now ("today", "on Tuesday", "signed", "launched",
-     "handed over", "inaugurated" in a news report) -> use article_date, date_basis
-     "Same-day report";
-  3. a project start date in the text or a project box -> date_basis "In-text date";
-  4. otherwise "" and date_basis "Not stated in article".
-  If only month and year are known use the 1st of the month (e.g. "March 2023" -> 3/1/2023).
+- funding_date: ONLY a date the source explicitly gives for the FUNDING itself - when the
+  funding agreement was signed, the grant/loan was approved, the money was disbursed or
+  allocated, or the donor announced/pledged the amount - as M/D/YYYY, with date_basis
+  "In-text: Signed" / "In-text: Approved" / "In-text: Disbursed" / "In-text: Allocated" /
+  "In-text: Announced". It is NOT the publication date, NOT the date of a launch, inauguration,
+  opening, ceremony, workshop, training or other event, and NOT a project start date. If the
+  source gives no such date: "" and date_basis "Not stated in article". Do not guess.
 - date_basis: as above.
 - date_evidence: short exact quote (original language) supporting funding_date, or "".
-- project_period: start -> end as "YYYY-MM -> YYYY-MM" (or "YYYY -> YYYY"), from stated dates or
-  durations ("a three-year project launched in 2024" -> "2024 -> 2027"; "1 March 2023 - 30
-  September 2026" -> "2023-03 -> 2026-09"). "" if neither is stated.
+- project_period: start -> end as "YYYY-MM -> YYYY-MM" (or "YYYY -> YYYY"), only when the source
+  states the start and end dates, or the start and the duration of THIS project/funding
+  ("a three-year project launched in 2024" -> "2024 -> 2027"; "1 March 2023 - 30 September
+  2026" -> "2023-03 -> 2026-09"). "" otherwise - do not assume a period.
 - in_2025_26: "Yes" if the funding date, or any part of the project period, falls in 2025 or
   2026; "NO - <year>" if it is clearly entirely in another year (give the funding/start year);
   "Unknown" only if no date at all is available.
 - live_page_evidence: if a fact you used (amount, date, period, donor) came from the LIVE PAGE
   rather than the article text, a short exact quote of it; otherwise "".
-- description: 1-2 sentence English summary of who funds what, for whom, and how much.
+- description: 1-2 sentence English summary of who funds what, for whom, and how much - saying
+  plainly whether the money is committed/pledged, signed, being spent, or delivered, exactly as
+  the source says (e.g. "Germany pledged to secure funds for ...", not "Germany funded ...").
 - confidence: High (all key facts explicit), Medium (some inferred), Low (vague/partial).
 - funding_type: "External donor", "Ministry budget", "Unknown".
 - sector: the ONE dashboard sector that best matches what the PROJECT does (not which ministry
@@ -227,9 +235,8 @@ RESPONSE_SCHEMA = {
                                    "enum": ["Announced", "Signed", "Planned", "Ongoing", "Completed"]},
                         "sector": {"type": "string", "enum": list(SECTORS)},
                         "date_basis": {"type": "string", "enum": [
-                            "In-text: Signed", "In-text: Launched", "In-text: Approved",
-                            "In-text: Disbursed", "In-text: Announced", "In-text: Handover",
-                            "Same-day report", "In-text date", "Not stated in article"]},
+                            "In-text: Signed", "In-text: Approved", "In-text: Disbursed",
+                            "In-text: Allocated", "In-text: Announced", "Not stated in article"]},
                         "confidence": {"type": "string", "enum": ["High", "Medium", "Low"]},
                         "funding_type": {"type": "string",
                                          "enum": ["External donor", "Ministry budget", "Unknown"]},
