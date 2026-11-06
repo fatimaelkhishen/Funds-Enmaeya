@@ -1,0 +1,85 @@
+name: Redo all data
+
+# Re-runs the AI funding extraction for every scraped day (or a date range),
+# then rebuilds the dashboard once with all the refreshed daily files.
+# Use after the AI rules change. Cost: a few cents per day processed.
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: 'First day (YYYY-MM-DD) - leave empty for the oldest'
+        required: false
+        default: ''
+      to_date:
+        description: 'Last day (YYYY-MM-DD) - leave empty for the newest'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-scrape
+  cancel-in-progress: false
+
+jobs:
+  redo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests openpyxl beautifulsoup4 trafilatura
+
+      - name: Re-run the AI extraction for each day
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FROM: ${{ inputs.from_date }}
+          TO: ${{ inputs.to_date }}
+        run: |
+          n=0
+          for dir in $(ls -d scrapes/*/ | sort); do
+            d=$(basename "$dir")
+            [[ "$d" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || continue
+            [ -n "$FROM" ] && [[ "$d" < "$FROM" ]] && continue
+            [ -n "$TO" ] && [[ "$d" > "$TO" ]] && continue
+            echo "::group::$d"
+            python scraper/extract_funding.py --date "$d" || echo "WARNING: $d failed, continuing"
+            echo "::endgroup::"
+            n=$((n+1))
+          done
+          echo "Processed $n day(s)"
+
+      - name: Save the refreshed files
+        if: always()
+        run: |
+          git config user.name "news-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scrapes
+          git diff --cached --quiet || git commit -m "Redo all funding data"
+          git pull --rebase --autostash || true
+          git push
+
+      - name: Rebuild the dashboard
+        if: always()
+        env:
+          DASHBOARD_TOKEN: ${{ secrets.DASHBOARD_TOKEN }}
+        run: |
+          TOKEN=$(printf '%s' "$DASHBOARD_TOKEN" | tr -d '[:space:]')
+          [ -n "$TOKEN" ] || { echo "No DASHBOARD_TOKEN"; exit 1; }
+          rm -rf "$RUNNER_TEMP/dashboard"
+          git clone --depth 1 "https://x-access-token:${TOKEN}@github.com/AyaAntar2004/enmaeyaFunds.git" "$RUNNER_TEMP/dashboard"
+          mkdir -p "$RUNNER_TEMP/dashboard/daily"
+          cp scrapes/*/AI-Gen/Funding_*.xlsx "$RUNNER_TEMP/dashboard/daily/" 2>/dev/null || true
+          cd "$RUNNER_TEMP/dashboard"
+          pip install -q -r requirements.txt
+          python sync_daily.py
+          git config user.name "news-scraper-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add daily data.json downloads/funding-data.xlsx
+          git diff --cached --quiet || git commit -m "Redo all funding data"
+          git push
