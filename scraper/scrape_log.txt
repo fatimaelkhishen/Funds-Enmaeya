@@ -45548,3 +45548,792 @@ Stacktrace:
 2026-11-05 13:21:27,801 [INFO] [World Bank - Lebanon] Saved article 5: When Businesses Invest, Markets Grow: Lessons from Afghanistan's Agricultural Ec
 2026-11-05 13:21:27,810 [INFO] [World Bank - Lebanon] No further pagination found after 1 page(s).
 2026-11-05 13:21:27,833 [INFO] [World Bank - Lebanon] Done. 5 new article(s) saved to World_Bank_Lebanon.xlsx.
+2026-11-06 12:50:07,120 [INFO] === Agence Francaise de Developpement - Lebanon ===
+2026-11-06 12:50:07,670 [INFO] [Agence Francaise de Developpement - Lebanon] Listing page 1: https://www.afd.fr/en/news?location%5B77%5D=77&words=
+2026-11-06 12:50:09,036 [INFO] [Agence Francaise de Developpement - Lebanon] (static) Found 20 candidate links (0 new).
+2026-11-06 12:50:10,552 [INFO] [Agence Francaise de Developpement - Lebanon] Listing page 2: https://www.afd.fr/en/news?location%5B77%5D=77&words=&page=1
+2026-11-06 12:50:11,393 [INFO] [Agence Francaise de Developpement - Lebanon] (static) Found 1 candidate links (0 new).
+2026-11-06 12:50:11,401 [INFO] [Agence Francaise de Developpement - Lebanon] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:50:11,409 [INFO] [Agence Francaise de Developpement - Lebanon] Done. 0 new article(s) saved to AFD_Lebanon.xlsx.
+2026-11-06 12:50:11,674 [INFO] === EBRD (click-pagination mode) ===
+2026-11-06 12:50:11,804 [INFO] ====== WebDriver manager ======
+2026-11-06 12:50:11,879 [INFO] Get LATEST chromedriver version for google-chrome
+2026-11-06 12:50:11,943 [INFO] There is no [linux64] chromedriver "156.0.8078.80" for browser google-chrome "156.0.8078" in cache
+2026-11-06 12:50:11,976 [INFO] There is no [linux64] chromedriver "156.0.8078.80" for browser google-chrome "156.0.8078" in cache
+2026-11-06 12:50:11,976 [INFO] Get LATEST chromedriver version for google-chrome
+2026-11-06 12:50:12,133 [INFO] WebDriver version 156.0.8078.80 selected
+2026-11-06 12:50:12,141 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.80/linux64/chromedriver-linux64.zip
+2026-11-06 12:50:12,141 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.80/linux64/chromedriver-linux64.zip
+2026-11-06 12:50:12,263 [INFO] Driver downloading response is 200
+2026-11-06 12:50:12,593 [INFO] Driver has been saved in cache [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80]
+2026-11-06 12:50:29,239 [INFO] [EBRD] Page 1: pager's own active-page indicator -> text='1' data-page='1' class=['active']
+2026-11-06 12:50:29,284 [INFO] [EBRD] Page 1: found 13 candidate links (1 new).
+2026-11-06 12:50:30,785 [INFO] ====== WebDriver manager ======
+2026-11-06 12:50:30,832 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:50:30,906 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x652da2d160aa <unknown>
+#1 0x652da2649875 <unknown>
+#2 0x652da2679e86 <unknown>
+#3 0x652da2677d44 <unknown>
+#4 0x652da26b7f51 <unknown>
+#5 0x652da26b79fc <unknown>
+#6 0x652da2682a07 <unknown>
+#7 0x652da2681d1e <unknown>
+#8 0x652da26827f1 <unknown>
+#9 0x652da2cd8c5c <unknown>
+#10 0x652da2cd7475 <unknown>
+#11 0x652da2cc27f8 <unknown>
+#12 0x652da2cd80ca <unknown>
+#13 0x652da2cab3f9 <unknown>
+#14 0x652da2d00848 <unknown>
+#15 0x652da2d009e5 <unknown>
+#16 0x652da2d14a43 <unknown>
+#17 0x7b83a70abe6b <unknown>
+#18 0x7b83a713f55c <unknown>
+).
+2026-11-06 12:50:32,319 [INFO] [EBRD] Saved article 1: EBRD will bring strong investment agenda to COP31 in Türkiye
+2026-11-06 12:50:39,022 [INFO] [EBRD] Page 2: pager's own active-page indicator -> text='2' data-page='2' class=['active']
+2026-11-06 12:50:39,065 [INFO] [EBRD] Page 2: found 13 candidate links (0 new).
+2026-11-06 12:50:45,694 [INFO] [EBRD] Page 3: pager's own active-page indicator -> text='3' data-page='3' class=['active']
+2026-11-06 12:50:45,739 [INFO] [EBRD] Page 3: found 13 candidate links (0 new).
+2026-11-06 12:50:45,739 [INFO] [EBRD] 2 page(s) in a row with nothing new - stopping (incremental mode).
+2026-11-06 12:50:45,755 [INFO] [EBRD] Done. 1 new article(s) saved to EBRD.xlsx (3 page(s) visited).
+2026-11-06 12:50:46,178 [INFO] === ESCWA ===
+2026-11-06 12:50:46,276 [WARNING] robots.txt at https://www.unescwa.org/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 12:50:46,288 [INFO] [ESCWA] Listing page 1: https://www.unescwa.org/news
+2026-11-06 12:50:46,348 [WARNING] HTTP 403 for https://www.unescwa.org/news
+2026-11-06 12:50:46,349 [INFO] [www.unescwa.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:50:46,358 [INFO] ====== WebDriver manager ======
+2026-11-06 12:50:46,390 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:50:51,686 [WARNING] [ESCWA] Listing page returned a bot/CAPTCHA/error screen instead of real content: https://www.unescwa.org/news - stopping.
+2026-11-06 12:50:51,702 [INFO] [ESCWA] Done. 0 new article(s) saved to ESCWA.xlsx.
+2026-11-06 12:50:52,017 [INFO] [European Union Delegation to Lebanon] Forcing headless Chrome (Selenium) for this organization, per config.
+2026-11-06 12:50:52,017 [INFO] === European Union Delegation to Lebanon ===
+2026-11-06 12:50:52,273 [WARNING] robots.txt at https://www.eeas.europa.eu/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 12:50:52,310 [INFO] [European Union Delegation to Lebanon] Listing page 1: https://www.eeas.europa.eu/eeas/press-material_en?f%5B0%5D=press_site%3ALebanon&s=203&page=0
+2026-11-06 12:50:52,335 [INFO] ====== WebDriver manager ======
+2026-11-06 12:50:52,371 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:50:56,758 [INFO] [European Union Delegation to Lebanon] extract_candidate_links: container=whole page (no main/article/#content found), <article> tags on page=0, <a href> in container=0, <a href> in whole page=0.
+2026-11-06 12:50:56,758 [INFO] [European Union Delegation to Lebanon] Only 0 link(s) anywhere on the page - title='ERROR: The request could not be satisfied', surviving href(s)=[], body starts: "ERROR: The request could not be satisfied 403 ERROR The request could not be satisfied. Request blocked.\nWe can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner. If you provide"
+2026-11-06 12:50:56,758 [INFO] [European Union Delegation to Lebanon] (selenium) Found 0 candidate links (0 new).
+2026-11-06 12:50:58,363 [INFO] [European Union Delegation to Lebanon] No further pagination found after 1 page(s).
+2026-11-06 12:50:58,466 [INFO] [European Union Delegation to Lebanon] Done. 0 new article(s) saved to EU_Delegation_Lebanon.xlsx.
+2026-11-06 12:50:58,783 [INFO] === European Investment Bank (click-pagination mode) ===
+2026-11-06 12:50:59,559 [INFO] ====== WebDriver manager ======
+2026-11-06 12:50:59,591 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:07,147 [INFO] [European Investment Bank] Page 1: found 19 candidate links (7 new).
+2026-11-06 12:51:08,647 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:08,681 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:08,752 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5e64038b50aa <unknown>
+#1 0x5e64031e8875 <unknown>
+#2 0x5e6403218e86 <unknown>
+#3 0x5e6403216d44 <unknown>
+#4 0x5e6403256f51 <unknown>
+#5 0x5e64032569fc <unknown>
+#6 0x5e6403221a07 <unknown>
+#7 0x5e6403220d1e <unknown>
+#8 0x5e64032217f1 <unknown>
+#9 0x5e6403877c5c <unknown>
+#10 0x5e6403876475 <unknown>
+#11 0x5e64038617f8 <unknown>
+#12 0x5e64038770ca <unknown>
+#13 0x5e640384a3f9 <unknown>
+#14 0x5e640389f848 <unknown>
+#15 0x5e640389f9e5 <unknown>
+#16 0x5e64038b3a43 <unknown>
+#17 0x758384eabe6b <unknown>
+#18 0x758384f3f55c <unknown>
+).
+2026-11-06 12:51:09,866 [INFO] [European Investment Bank] Saved article 1: Danish businesses to get financing boost through €80 million EIB loan to Ringkjø
+2026-11-06 12:51:11,366 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:11,396 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:11,469 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5fec401b20aa <unknown>
+#1 0x5fec3fae5875 <unknown>
+#2 0x5fec3fb15e86 <unknown>
+#3 0x5fec3fb13d44 <unknown>
+#4 0x5fec3fb53f51 <unknown>
+#5 0x5fec3fb539fc <unknown>
+#6 0x5fec3fb1ea07 <unknown>
+#7 0x5fec3fb1dd1e <unknown>
+#8 0x5fec3fb1e7f1 <unknown>
+#9 0x5fec40174c5c <unknown>
+#10 0x5fec40173475 <unknown>
+#11 0x5fec4015e7f8 <unknown>
+#12 0x5fec401740ca <unknown>
+#13 0x5fec401473f9 <unknown>
+#14 0x5fec4019c848 <unknown>
+#15 0x5fec4019c9e5 <unknown>
+#16 0x5fec401b0a43 <unknown>
+#17 0x71274deabe6b <unknown>
+#18 0x71274df3f55c <unknown>
+).
+2026-11-06 12:51:12,219 [INFO] [European Investment Bank] Saved article 2: New European Investment Bank Group representative in Poland: support for economi
+2026-11-06 12:51:13,720 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:13,749 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:13,823 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x6410fec3c0aa <unknown>
+#1 0x6410fe56f875 <unknown>
+#2 0x6410fe59fe86 <unknown>
+#3 0x6410fe59dd44 <unknown>
+#4 0x6410fe5ddf51 <unknown>
+#5 0x6410fe5dd9fc <unknown>
+#6 0x6410fe5a8a07 <unknown>
+#7 0x6410fe5a7d1e <unknown>
+#8 0x6410fe5a87f1 <unknown>
+#9 0x6410febfec5c <unknown>
+#10 0x6410febfd475 <unknown>
+#11 0x6410febe87f8 <unknown>
+#12 0x6410febfe0ca <unknown>
+#13 0x6410febd13f9 <unknown>
+#14 0x6410fec26848 <unknown>
+#15 0x6410fec269e5 <unknown>
+#16 0x6410fec3aa43 <unknown>
+#17 0x7fe9b88abe6b <unknown>
+#18 0x7fe9b893f55c <unknown>
+).
+2026-11-06 12:51:14,563 [INFO] [European Investment Bank] Saved article 3: Panama: EIB formally launches regional representation to strengthen partnerships
+2026-11-06 12:51:16,063 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:16,094 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:16,165 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x564d732350aa <unknown>
+#1 0x564d72b68875 <unknown>
+#2 0x564d72b98e86 <unknown>
+#3 0x564d72b96d44 <unknown>
+#4 0x564d72bd6f51 <unknown>
+#5 0x564d72bd69fc <unknown>
+#6 0x564d72ba1a07 <unknown>
+#7 0x564d72ba0d1e <unknown>
+#8 0x564d72ba17f1 <unknown>
+#9 0x564d731f7c5c <unknown>
+#10 0x564d731f6475 <unknown>
+#11 0x564d731e17f8 <unknown>
+#12 0x564d731f70ca <unknown>
+#13 0x564d731ca3f9 <unknown>
+#14 0x564d7321f848 <unknown>
+#15 0x564d7321f9e5 <unknown>
+#16 0x564d73233a43 <unknown>
+#17 0x7b18a88abe6b <unknown>
+#18 0x7b18a893f55c <unknown>
+).
+2026-11-06 12:51:16,894 [INFO] [European Investment Bank] Saved article 4: Three Ukrainian Vocational Education and Training colleges set to receive more t
+2026-11-06 12:51:18,394 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:18,426 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:18,497 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x63a4e2bf90aa <unknown>
+#1 0x63a4e252c875 <unknown>
+#2 0x63a4e255ce86 <unknown>
+#3 0x63a4e255ad44 <unknown>
+#4 0x63a4e259af51 <unknown>
+#5 0x63a4e259a9fc <unknown>
+#6 0x63a4e2565a07 <unknown>
+#7 0x63a4e2564d1e <unknown>
+#8 0x63a4e25657f1 <unknown>
+#9 0x63a4e2bbbc5c <unknown>
+#10 0x63a4e2bba475 <unknown>
+#11 0x63a4e2ba57f8 <unknown>
+#12 0x63a4e2bbb0ca <unknown>
+#13 0x63a4e2b8e3f9 <unknown>
+#14 0x63a4e2be3848 <unknown>
+#15 0x63a4e2be39e5 <unknown>
+#16 0x63a4e2bf7a43 <unknown>
+#17 0x7abec6eabe6b <unknown>
+#18 0x7abec6f3f55c <unknown>
+).
+2026-11-06 12:51:19,265 [INFO] [European Investment Bank] Saved article 5: Most Europeans now join Germans in seeing energy autonomy as the top benefit of 
+2026-11-06 12:51:20,765 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:20,794 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:20,869 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5785cc52b0aa <unknown>
+#1 0x5785cbe5e875 <unknown>
+#2 0x5785cbe8ee86 <unknown>
+#3 0x5785cbe8cd44 <unknown>
+#4 0x5785cbeccf51 <unknown>
+#5 0x5785cbecc9fc <unknown>
+#6 0x5785cbe97a07 <unknown>
+#7 0x5785cbe96d1e <unknown>
+#8 0x5785cbe977f1 <unknown>
+#9 0x5785cc4edc5c <unknown>
+#10 0x5785cc4ec475 <unknown>
+#11 0x5785cc4d77f8 <unknown>
+#12 0x5785cc4ed0ca <unknown>
+#13 0x5785cc4c03f9 <unknown>
+#14 0x5785cc515848 <unknown>
+#15 0x5785cc5159e5 <unknown>
+#16 0x5785cc529a43 <unknown>
+#17 0x75345c4abe6b <unknown>
+#18 0x75345c53f55c <unknown>
+).
+2026-11-06 12:51:21,576 [INFO] [European Investment Bank] Saved article 6: Belgians want an energy transition that cuts costs, boosts autonomy and delivers
+2026-11-06 12:51:23,077 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:23,105 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:23,178 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5c8aa167d0aa <unknown>
+#1 0x5c8aa0fb0875 <unknown>
+#2 0x5c8aa0fe0e86 <unknown>
+#3 0x5c8aa0fded44 <unknown>
+#4 0x5c8aa101ef51 <unknown>
+#5 0x5c8aa101e9fc <unknown>
+#6 0x5c8aa0fe9a07 <unknown>
+#7 0x5c8aa0fe8d1e <unknown>
+#8 0x5c8aa0fe97f1 <unknown>
+#9 0x5c8aa163fc5c <unknown>
+#10 0x5c8aa163e475 <unknown>
+#11 0x5c8aa16297f8 <unknown>
+#12 0x5c8aa163f0ca <unknown>
+#13 0x5c8aa16123f9 <unknown>
+#14 0x5c8aa1667848 <unknown>
+#15 0x5c8aa16679e5 <unknown>
+#16 0x5c8aa167ba43 <unknown>
+#17 0x77e03ccabe6b <unknown>
+#18 0x77e03cd3f55c <unknown>
+).
+2026-11-06 12:51:23,930 [INFO] [European Investment Bank] Saved article 7: Finns want an energy transition that cuts costs, boosts autonomy and delivers fo
+2026-11-06 12:51:30,680 [INFO] [European Investment Bank] Page 2: found 19 candidate links (0 new).
+2026-11-06 12:51:37,433 [INFO] [European Investment Bank] Page 3: found 19 candidate links (0 new).
+2026-11-06 12:51:37,433 [INFO] [European Investment Bank] 2 page(s) in a row with nothing new - stopping (incremental mode).
+2026-11-06 12:51:37,877 [INFO] [European Investment Bank] Done. 7 new article(s) saved to European_Investment_Bank.xlsx (3 page(s) visited).
+2026-11-06 12:51:38,391 [INFO] === FAO Lebanon ===
+2026-11-06 12:51:38,681 [INFO] [FAO Lebanon] Listing page 1: https://www.fao.org/lebanon/news/en/
+2026-11-06 12:51:39,405 [INFO] [www.fao.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:51:39,414 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:39,444 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:51:44,844 [INFO] [FAO Lebanon] (selenium) Found 20 candidate links (0 new).
+2026-11-06 12:51:46,365 [INFO] [FAO Lebanon] Listing page 2: https://www.fao.org/lebanon/news/11/en?tabInx=0
+2026-11-06 12:51:48,668 [INFO] [www.fao.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:51:52,991 [INFO] [FAO Lebanon] (selenium) Found 21 candidate links (0 new).
+2026-11-06 12:51:53,009 [INFO] [FAO Lebanon] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:51:53,027 [INFO] [FAO Lebanon] Done. 0 new article(s) saved to FAO_Lebanon.xlsx.
+2026-11-06 12:51:53,335 [INFO] === GIZ Lebanon (custom pager) ===
+2026-11-06 12:51:54,148 [INFO] ====== WebDriver manager ======
+2026-11-06 12:51:54,179 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:52:00,390 [INFO] [GIZ Lebanon] Pager page 1: found 10 link(s) (10 new).
+2026-11-06 12:52:06,975 [INFO] [GIZ Lebanon] Pager page 2: found 10 link(s) (10 new).
+2026-11-06 12:52:13,538 [INFO] [GIZ Lebanon] Pager page 3: found 1 link(s) (1 new).
+2026-11-06 12:52:13,543 [INFO] [GIZ Lebanon] Next-page button is disabled - reached the last page (3).
+2026-11-06 12:52:13,543 [INFO] [GIZ Lebanon] Collected 21 unique project link(s) across all pager pages.
+2026-11-06 12:52:13,548 [INFO] [GIZ Lebanon] Done. 0 new article(s) saved to GIZ_Lebanon.xlsx.
+2026-11-06 12:52:13,839 [INFO] === ILO Lebanon / Arab States (custom pager) ===
+2026-11-06 12:52:14,121 [INFO] [ILO Lebanon / Arab States] Listing page 1: https://www.ilo.org/all-news-for-country?cf0=946
+2026-11-06 12:52:16,289 [INFO] [ILO Lebanon / Arab States] (static) Found 19 candidate links (0 new).
+2026-11-06 12:52:17,838 [INFO] [ILO Lebanon / Arab States] Listing page 2: https://www.ilo.org/all-news-for-country?cf0=946&page=1
+2026-11-06 12:52:19,440 [INFO] [ILO Lebanon / Arab States] (static) Found 20 candidate links (0 new).
+2026-11-06 12:52:20,941 [INFO] [ILO Lebanon / Arab States] Listing page 3: https://www.ilo.org/all-news-for-country?cf0=946&page=2
+2026-11-06 12:52:22,633 [INFO] [ILO Lebanon / Arab States] (static) Found 20 candidate links (0 new).
+2026-11-06 12:52:24,134 [INFO] [ILO Lebanon / Arab States] Listing page 4: https://www.ilo.org/all-news-for-country?cf0=946&page=3
+2026-11-06 12:52:26,139 [INFO] [ILO Lebanon / Arab States] (static) Found 20 candidate links (0 new).
+2026-11-06 12:52:27,641 [INFO] [ILO Lebanon / Arab States] Listing page 5: https://www.ilo.org/all-news-for-country?cf0=946&page=4
+2026-11-06 12:52:29,406 [INFO] [ILO Lebanon / Arab States] (static) Found 20 candidate links (0 new).
+2026-11-06 12:52:30,968 [INFO] [ILO Lebanon / Arab States] Done. 0 new article(s) saved to ILO_Lebanon_Arab_States.xlsx.
+2026-11-06 12:52:31,185 [INFO] === IMF - Lebanon (custom AJAX pager) ===
+2026-11-06 12:52:31,308 [WARNING] robots.txt at https://www.imf.org/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 12:52:31,326 [INFO] ====== WebDriver manager ======
+2026-11-06 12:52:31,360 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:52:52,189 [INFO] [IMF - Lebanon] Results page 1: found 0 link(s) (0 new).
+2026-11-06 12:52:52,194 [INFO] [IMF - Lebanon] No next-page button found, stopping after 1 page(s).
+2026-11-06 12:52:52,194 [INFO] [IMF - Lebanon] Collected 0 unique document link(s) across all pages.
+2026-11-06 12:52:52,202 [INFO] [IMF - Lebanon] Done. 0 new article(s) saved to IMF_Lebanon.xlsx.
+2026-11-06 12:52:52,493 [INFO] === IOM ===
+2026-11-06 12:52:52,949 [WARNING] robots.txt at https://www.iom.int/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 12:52:52,972 [INFO] [IOM] Listing page 1: https://www.iom.int/news
+2026-11-06 12:52:53,040 [WARNING] HTTP 403 for https://www.iom.int/news
+2026-11-06 12:52:53,041 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:52:53,050 [INFO] ====== WebDriver manager ======
+2026-11-06 12:52:53,080 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:52:59,042 [INFO] [IOM] (selenium) Found 18 candidate links (3 new).
+2026-11-06 12:53:00,610 [WARNING] HTTP 403 for https://www.iom.int/news/iom-and-unhcr-warn-millions-sudan-risk-losing-emergency-shelter-funding-runs-out
+2026-11-06 12:53:00,611 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:53:05,911 [INFO] [IOM] Saved article 1: IOM and UNHCR Warn Millions in Sudan Risk Losing Emergency Shelter as Funding Ru
+2026-11-06 12:53:07,460 [WARNING] HTTP 403 for https://www.iom.int/news/displaced-ukrainians-make-repeated-trips-home-barriers-return-persist
+2026-11-06 12:53:07,461 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:53:14,894 [INFO] [IOM] Saved article 2: Displaced Ukrainians Make Repeated Trips Home as Barriers to Return Persist
+2026-11-06 12:53:16,950 [WARNING] HTTP 403 for https://www.iom.int/news/100000-risk-losing-healthcare-key-south-sudan-border-clinic-nears-closure-warns-iom
+2026-11-06 12:53:16,951 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:53:24,705 [INFO] [IOM] Saved article 3: 100,000 Risk Losing Healthcare as Key South Sudan Border Clinic Nears Closure, W
+2026-11-06 12:53:26,262 [INFO] [IOM] Listing page 2: https://www.iom.int/news?page=1
+2026-11-06 12:53:26,337 [WARNING] HTTP 403 for https://www.iom.int/news?page=1
+2026-11-06 12:53:26,337 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:53:33,556 [INFO] [IOM] (selenium) Found 18 candidate links (0 new).
+2026-11-06 12:53:35,113 [INFO] [IOM] Listing page 3: https://www.iom.int/news?page=2
+2026-11-06 12:53:35,166 [WARNING] HTTP 403 for https://www.iom.int/news?page=2
+2026-11-06 12:53:35,166 [INFO] [www.iom.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:53:43,142 [INFO] [IOM] (selenium) Found 18 candidate links (0 new).
+2026-11-06 12:53:43,195 [INFO] [IOM] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:53:43,250 [INFO] [IOM] Done. 3 new article(s) saved to IOM.xlsx.
+2026-11-06 12:53:43,827 [INFO] === Islamic Development Bank ===
+2026-11-06 12:53:44,342 [INFO] [Islamic Development Bank] Listing page 1: https://www.isdb.org/news
+2026-11-06 12:53:44,833 [INFO] [Islamic Development Bank] (static) Found 10 candidate links (0 new).
+2026-11-06 12:53:46,487 [INFO] [Islamic Development Bank] Listing page 2: https://www.isdb.org/news?page=1
+2026-11-06 12:53:46,576 [INFO] [Islamic Development Bank] (static) Found 10 candidate links (0 new).
+2026-11-06 12:53:46,730 [INFO] [Islamic Development Bank] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:53:46,883 [INFO] [Islamic Development Bank] Done. 0 new article(s) saved to Islamic_Development_Bank.xlsx.
+2026-11-06 12:53:47,155 [INFO] === Lebanese Presidency ===
+2026-11-06 12:53:57,280 [INFO] [Lebanese Presidency] Listing page 1: https://www.presidency.gov.lb/media
+2026-11-06 12:54:16,999 [WARNING] HTTP 522 for https://www.presidency.gov.lb/media (attempt 1/3)
+2026-11-06 12:54:39,623 [WARNING] HTTP 522 for https://www.presidency.gov.lb/media (attempt 2/3)
+2026-11-06 12:55:02,055 [WARNING] HTTP 522 for https://www.presidency.gov.lb/media (attempt 3/3) - giving up after retries
+2026-11-06 12:55:02,055 [INFO] [www.presidency.gov.lb] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 12:55:02,064 [INFO] ====== WebDriver manager ======
+2026-11-06 12:55:02,097 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:55:26,048 [INFO] [Lebanese Presidency] extract_candidate_links: container=whole page (no main/article/#content found), <article> tags on page=0, <a href> in container=4, <a href> in whole page=4.
+2026-11-06 12:55:26,048 [INFO] [Lebanese Presidency]   container link: href='https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=www.presidency.gov.lb' text='' -> REJECTED (different domain)
+2026-11-06 12:55:26,048 [INFO] [Lebanese Presidency]   container link: href='https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=www.presidency.gov.lb' text='Cloudflare' -> REJECTED (different domain)
+2026-11-06 12:55:26,048 [INFO] [Lebanese Presidency]   container link: href='https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-522/' text='Additional troubleshooting information here.' -> REJECTED (different domain)
+2026-11-06 12:55:26,048 [INFO] [Lebanese Presidency]   container link: href='https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_522&utm_campaign=www.presidency.gov.lb' text='Cloudflare' -> REJECTED (different domain)
+2026-11-06 12:55:26,049 [INFO] [Lebanese Presidency] (selenium) Found 0 candidate links (0 new).
+2026-11-06 12:55:27,605 [INFO] [Lebanese Presidency] No more results after 1 page(s).
+2026-11-06 12:55:27,660 [INFO] [Lebanese Presidency] Done. 0 new article(s) saved to Lebanese_Presidency.xlsx.
+2026-11-06 12:55:27,991 [INFO] [Ministry of Agriculture] Selenium fallback disabled for this organization, per config - always using the plain static fetch, even if it looks thin.
+2026-11-06 12:55:27,991 [INFO] === Ministry of Agriculture ===
+2026-11-06 12:55:29,345 [INFO] [Ministry of Agriculture] Listing page 1: http://www.agriculture.gov.lb/Media/News
+2026-11-06 12:55:31,955 [INFO] [Ministry of Agriculture] (static) Found 10 candidate links (1 new).
+2026-11-06 12:55:36,172 [INFO] [Ministry of Agriculture] Saved article 1: وزارة الزراعة تنظّم ندوة إرشادية في عكار حول خصائص الزيتون وأصنافه
+2026-11-06 12:55:38,577 [INFO] [Ministry of Agriculture] Listing page 2: http://www.agriculture.gov.lb/Media/News?page=2
+2026-11-06 12:55:40,252 [INFO] [Ministry of Agriculture] (static) Found 10 candidate links (0 new).
+2026-11-06 12:55:42,667 [INFO] [Ministry of Agriculture] Listing page 3: http://www.agriculture.gov.lb/Media/News?page=3
+2026-11-06 12:55:44,357 [INFO] [Ministry of Agriculture] (static) Found 10 candidate links (0 new).
+2026-11-06 12:55:45,236 [INFO] [Ministry of Agriculture] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:55:46,101 [INFO] [Ministry of Agriculture] Done. 1 new article(s) saved to Ministry_of_Agriculture.xlsx.
+2026-11-06 12:55:46,790 [INFO] === Ministry of Culture (custom AJAX-endpoint pager driver) ===
+2026-11-06 12:55:49,675 [INFO] [Ministry of Culture] Page 0: 12 link(s). Last page reported as 74.
+2026-11-06 12:55:51,522 [INFO] [Ministry of Culture] Page 1: 12 link(s) (12 new).
+2026-11-06 12:55:53,366 [INFO] [Ministry of Culture] Page 2: 12 link(s) (12 new).
+2026-11-06 12:55:55,207 [INFO] [Ministry of Culture] Page 3: 12 link(s) (12 new).
+2026-11-06 12:55:57,033 [INFO] [Ministry of Culture] Page 4: 12 link(s) (12 new).
+2026-11-06 12:55:57,033 [INFO] [Ministry of Culture] Collected 60 unique news link(s) across all pages.
+2026-11-06 12:55:57,082 [INFO] [Ministry of Culture] Done. 0 new article(s) saved to Ministry_of_Culture.xlsx.
+2026-11-06 12:55:57,326 [INFO] === Ministry of Economy and Trade ===
+2026-11-06 12:55:58,083 [INFO] [Ministry of Economy and Trade] Listing page 1: https://economy.gov.lb/ar/news
+2026-11-06 12:56:01,223 [INFO] [Ministry of Economy and Trade] (static) Found 10 candidate links (0 new).
+2026-11-06 12:56:02,743 [INFO] [Ministry of Economy and Trade] Listing page 2: https://economy.gov.lb/ar/news?page=2
+2026-11-06 12:56:05,576 [INFO] [Ministry of Economy and Trade] (static) Found 10 candidate links (0 new).
+2026-11-06 12:56:05,596 [INFO] [Ministry of Economy and Trade] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:56:05,615 [INFO] [Ministry of Economy and Trade] Done. 0 new article(s) saved to Ministry_of_Economy_and_Trade.xlsx.
+2026-11-06 12:56:05,897 [INFO] === Ministry of Education and Higher Education ===
+2026-11-06 12:56:07,597 [INFO] [Ministry of Education and Higher Education] Listing page 1: https://www.mehe.gov.lb/ar/media-center/news
+2026-11-06 12:56:29,160 [INFO] [Ministry of Education and Higher Education] (static) Found 15 candidate links (0 new).
+2026-11-06 12:56:30,749 [INFO] [Ministry of Education and Higher Education] Listing page 2: https://www.mehe.gov.lb/ar/media-center/news?page=1
+2026-11-06 12:56:31,352 [INFO] [Ministry of Education and Higher Education] (static) Found 15 candidate links (0 new).
+2026-11-06 12:56:31,444 [INFO] [Ministry of Education and Higher Education] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 12:56:31,537 [INFO] [Ministry of Education and Higher Education] Done. 0 new article(s) saved to Ministry_of_Education_and_Higher_Education.xlsx.
+2026-11-06 12:56:31,776 [INFO] === Ministry of Energy and Water (click-pagination mode) ===
+2026-11-06 12:56:32,192 [INFO] ====== WebDriver manager ======
+2026-11-06 12:56:32,225 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 12:56:37,120 [INFO] [Ministry of Energy and Water] Page 1: found 20 candidate links (0 new).
+2026-11-06 12:56:42,710 [INFO] [Ministry of Energy and Water] Page 2: found 28 candidate links (0 new).
+2026-11-06 12:56:42,711 [INFO] [Ministry of Energy and Water] 2 page(s) in a row with nothing new - stopping (incremental mode).
+2026-11-06 12:56:42,751 [INFO] [Ministry of Energy and Water] Done. 0 new article(s) saved to Ministry_of_Energy_and_Water.xlsx (2 page(s) visited).
+2026-11-06 12:56:43,050 [INFO] === Ministry of Environment ===
+2026-11-06 12:56:44,171 [INFO] [Ministry of Environment] Listing page 1: https://moe.gov.lb/للحصول-على-المعلومات/الاخبار-والنشاطات.aspx
+2026-11-06 12:56:45,984 [INFO] [Ministry of Environment] (static) Found 9 candidate links (0 new).
+2026-11-06 12:56:47,492 [INFO] [Ministry of Environment] No further pagination found after 1 page(s).
+2026-11-06 12:56:47,496 [INFO] [Ministry of Environment] Done. 0 new article(s) saved to Ministry_of_Environment.xlsx.
+2026-11-06 12:56:47,728 [INFO] [Ministry of Finance] Selenium fallback disabled for this organization, per config - always using the plain static fetch, even if it looks thin.
+2026-11-06 12:56:47,728 [INFO] === Ministry of Finance ===
+2026-11-06 12:56:48,818 [INFO] [Ministry of Finance] Listing page 1: https://www.finance.gov.lb/ar-lb
+2026-11-06 12:56:57,658 [INFO] [Ministry of Finance] extract_candidate_links: container=whole page (no main/article/#content found), <article> tags on page=0, <a href> in container=1, <a href> in whole page=1.
+2026-11-06 12:56:57,658 [INFO] [Ministry of Finance] Only 1 link(s) anywhere on the page - title='MOF', surviving href(s)=['/cq59YphZSWPioSUM74-8Vh3ZDsaARrwdHxJJzJgVs9c=.html'], body starts: 'MOF cq59YphZSWPioSUM74-8Vh3ZDsaARrwdHxJJzJgVs9c=.html'
+2026-11-06 12:56:57,658 [INFO] [Ministry of Finance] (static) Found 0 candidate links (0 new).
+2026-11-06 12:56:59,202 [INFO] [Ministry of Finance] No further pagination found after 1 page(s).
+2026-11-06 12:56:59,206 [INFO] [Ministry of Finance] Done. 0 new article(s) saved to Ministry_of_Finance.xlsx.
+2026-11-06 12:56:59,469 [INFO] === Ministry of Foreign Affairs and Emigrants (click-pagination mode) ===
+2026-11-06 12:57:09,824 [INFO] ====== WebDriver manager ======
+2026-11-06 12:57:09,857 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:01:10,253 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=55289): Read timed out. (read timeout=120)")': /session/88454ff9ad0d3a788f63ffb3880a2f48
+2026-11-06 13:02:10,564 [INFO] [Ministry of Industry] Selenium fallback disabled for this organization, per config - always using the plain static fetch, even if it looks thin.
+2026-11-06 13:02:10,565 [INFO] === Ministry of Industry ===
+2026-11-06 13:02:11,956 [INFO] [Ministry of Industry] Listing page 1: http://www.industry.gov.lb/Media/News
+2026-11-06 13:02:13,564 [INFO] [Ministry of Industry] (static) Found 10 candidate links (0 new).
+2026-11-06 13:02:15,127 [INFO] [Ministry of Industry] Listing page 2: http://www.industry.gov.lb/Media/News?page=2
+2026-11-06 13:02:16,227 [INFO] [Ministry of Industry] (static) Found 10 candidate links (0 new).
+2026-11-06 13:02:16,285 [INFO] [Ministry of Industry] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:02:16,343 [INFO] [Ministry of Industry] Done. 0 new article(s) saved to Ministry_of_Industry.xlsx.
+2026-11-06 13:02:16,585 [INFO] === Ministry of Interior and Municipalities ===
+2026-11-06 13:02:19,915 [INFO] [Ministry of Interior and Municipalities] Listing page 1: https://moim.gov.lb/latest-news/
+2026-11-06 13:02:21,607 [INFO] [Ministry of Interior and Municipalities] (static) Found 15 candidate links (2 new).
+2026-11-06 13:02:24,228 [INFO] [moim.gov.lb] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:02:24,237 [INFO] ====== WebDriver manager ======
+2026-11-06 13:02:24,270 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:02:37,708 [INFO] [Ministry of Interior and Municipalities] Saved article 1: الموقع الرسمي لوزارة الداخلية والبلديات في الجمهورية اللبنانية
+2026-11-06 13:02:40,771 [INFO] [Ministry of Interior and Municipalities] Saved article 2: الوزير الحجار عقد اجتماعا مع مدير عام قوى الامن الداخلي اللواء رائد عبدالله في م
+2026-11-06 13:02:42,294 [INFO] [Ministry of Interior and Municipalities] Listing page 2: https://moim.gov.lb/latest-news/page/2/
+2026-11-06 13:02:43,659 [INFO] [Ministry of Interior and Municipalities] (static) Found 17 candidate links (0 new).
+2026-11-06 13:02:45,179 [INFO] [Ministry of Interior and Municipalities] Listing page 3: https://moim.gov.lb/latest-news/page/3/
+2026-11-06 13:02:46,524 [INFO] [Ministry of Interior and Municipalities] (static) Found 14 candidate links (0 new).
+2026-11-06 13:02:46,541 [INFO] [Ministry of Interior and Municipalities] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:02:46,558 [INFO] [Ministry of Interior and Municipalities] Done. 2 new article(s) saved to Ministry_of_Interior_and_Municipalities.xlsx.
+2026-11-06 13:02:46,968 [INFO] === Ministry of Justice ===
+2026-11-06 13:02:47,511 [INFO] [Ministry of Justice] Listing page 1: https://www.justice.gov.lb/index.php/news-announcements/2
+2026-11-06 13:02:50,630 [INFO] [Ministry of Justice] (static) Found 297 candidate links (0 new).
+2026-11-06 13:02:52,208 [INFO] [Ministry of Justice] No further pagination found after 1 page(s).
+2026-11-06 13:02:52,272 [INFO] [Ministry of Justice] Done. 0 new article(s) saved to Ministry_of_Justice.xlsx.
+2026-11-06 13:02:52,490 [INFO] === Ministry of Labor ===
+2026-11-06 13:02:53,066 [WARNING] robots.txt at https://www.labor.gov.lb/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 13:02:53,070 [INFO] [Ministry of Labor] Listing page 1: https://www.labor.gov.lb/AllNews.aspx?pub=1
+2026-11-06 13:02:53,131 [WARNING] HTTP 403 for https://www.labor.gov.lb/AllNews.aspx?pub=1
+2026-11-06 13:02:53,131 [INFO] [www.labor.gov.lb] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:02:53,140 [INFO] ====== WebDriver manager ======
+2026-11-06 13:02:53,172 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:02:57,630 [WARNING] [Ministry of Labor] Listing page returned a bot/CAPTCHA/error screen instead of real content: https://www.labor.gov.lb/AllNews.aspx?pub=1 - stopping.
+2026-11-06 13:02:57,634 [INFO] [Ministry of Labor] Done. 0 new article(s) saved to Ministry_of_Labor.xlsx.
+2026-11-06 13:02:57,929 [INFO] === Ministry of Public Health ===
+2026-11-06 13:02:59,936 [INFO] [Ministry of Public Health] Listing page 1: https://www.moph.gov.lb/ar/Media/news
+2026-11-06 13:03:01,940 [INFO] [Ministry of Public Health] (static) Found 102 candidate links (1 new).
+2026-11-06 13:03:05,960 [INFO] [Ministry of Public Health] Saved article 1: وزير الصحة عاد أول طفل خضع لعملية زرع قوقعة على نفقة الوزارة في الجامعة الأميركي
+2026-11-06 13:03:10,113 [INFO] [Ministry of Public Health] Listing page 2: https://www.moph.gov.lb/ar/Media/news/page:2
+2026-11-06 13:03:11,923 [INFO] [Ministry of Public Health] (static) Found 102 candidate links (0 new).
+2026-11-06 13:03:16,021 [INFO] [Ministry of Public Health] Listing page 3: https://www.moph.gov.lb/ar/Media/news/page:3
+2026-11-06 13:03:17,822 [INFO] [Ministry of Public Health] (static) Found 102 candidate links (0 new).
+2026-11-06 13:03:20,400 [INFO] [Ministry of Public Health] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:03:22,900 [INFO] [Ministry of Public Health] Done. 1 new article(s) saved to Ministry_of_Public_Health.xlsx.
+2026-11-06 13:03:24,394 [INFO] [Ministry of Public Works and Transport] Selenium fallback disabled for this organization, per config - always using the plain static fetch, even if it looks thin.
+2026-11-06 13:03:24,394 [INFO] === Ministry of Public Works and Transport ===
+2026-11-06 13:03:25,263 [INFO] [Ministry of Public Works and Transport] Listing page 1: http://www.mopw.gov.lb/Media/News
+2026-11-06 13:03:26,632 [INFO] [Ministry of Public Works and Transport] (static) Found 1 candidate links (0 new).
+2026-11-06 13:03:28,140 [INFO] [Ministry of Public Works and Transport] No further pagination found after 1 page(s).
+2026-11-06 13:03:28,140 [INFO] [Ministry of Public Works and Transport] Listing page 1: http://www.mopw.gov.lb/media/news-(1)
+2026-11-06 13:03:28,959 [INFO] [Ministry of Public Works and Transport] (static) Found 10 candidate links (0 new).
+2026-11-06 13:03:30,466 [INFO] [Ministry of Public Works and Transport] Listing page 2: http://www.mopw.gov.lb/media/news-(1)?page=2
+2026-11-06 13:03:31,203 [INFO] [Ministry of Public Works and Transport] (static) Found 10 candidate links (0 new).
+2026-11-06 13:03:31,209 [INFO] [Ministry of Public Works and Transport] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:03:31,209 [INFO] [Ministry of Public Works and Transport] Listing page 1: http://www.mopw.gov.lb/media/news-(2)
+2026-11-06 13:03:31,834 [INFO] [Ministry of Public Works and Transport] (static) Found 10 candidate links (0 new).
+2026-11-06 13:03:33,342 [INFO] [Ministry of Public Works and Transport] Listing page 2: http://www.mopw.gov.lb/media/news-(2)?page=2
+2026-11-06 13:03:33,855 [INFO] [Ministry of Public Works and Transport] (static) Found 2 candidate links (0 new).
+2026-11-06 13:03:33,862 [INFO] [Ministry of Public Works and Transport] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:03:33,867 [INFO] [Ministry of Public Works and Transport] Done. 0 new article(s) saved to Ministry_of_Public_Works_and_Transport.xlsx.
+2026-11-06 13:03:34,078 [INFO] === Ministry of Social Affairs ===
+2026-11-06 13:03:44,686 [INFO] [Ministry of Social Affairs] Listing page 1: https://www.socialaffairs.gov.lb/news
+2026-11-06 13:04:04,895 [WARNING] Request error (1/3) for https://www.socialaffairs.gov.lb/news: HTTPSConnectionPool(host='www.socialaffairs.gov.lb', port=443): Max retries exceeded with url: /news (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.socialaffairs.gov.lb', port=443) at 0x7bba8d5efd10>, 'Connection to www.socialaffairs.gov.lb timed out. (connect timeout=20)'))
+2026-11-06 13:04:27,105 [WARNING] Request error (2/3) for https://www.socialaffairs.gov.lb/news: HTTPSConnectionPool(host='www.socialaffairs.gov.lb', port=443): Max retries exceeded with url: /news (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.socialaffairs.gov.lb', port=443) at 0x7bba8d5efd50>, 'Connection to www.socialaffairs.gov.lb timed out. (connect timeout=20)'))
+2026-11-06 13:04:49,774 [WARNING] Request error (3/3) for https://www.socialaffairs.gov.lb/news: HTTPSConnectionPool(host='www.socialaffairs.gov.lb', port=443): Max retries exceeded with url: /news (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.socialaffairs.gov.lb', port=443) at 0x7bba8d341c90>, 'Connection to www.socialaffairs.gov.lb timed out. (connect timeout=20)'))
+2026-11-06 13:04:51,774 [INFO] [www.socialaffairs.gov.lb] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:04:51,794 [INFO] ====== WebDriver manager ======
+2026-11-06 13:04:51,828 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:06:52,216 [WARNING] Selenium fetch failed for https://www.socialaffairs.gov.lb/news: HTTPConnectionPool(host='localhost', port=47213): Read timed out. (read timeout=120)
+2026-11-06 13:06:52,216 [WARNING] [Ministry of Social Affairs] Could not fetch listing page (even with Selenium fallback), stopping.
+2026-11-06 13:06:53,014 [INFO] [Ministry of Social Affairs] Done. 0 new article(s) saved to Ministry_of_Social_Affairs.xlsx.
+2026-11-06 13:08:53,068 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=47213): Read timed out. (read timeout=120)")': /session/8a550eb15c5c2802f0dec66c98890f58
+2026-11-06 13:09:52,499 [INFO] === Ministry of Telecommunications / TRA (custom GridView pager driver) ===
+2026-11-06 13:09:55,000 [INFO] ====== WebDriver manager ======
+2026-11-06 13:09:55,030 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:09:56,931 [INFO] [Ministry of Telecommunications / TRA] Page 1: 9 link(s).
+2026-11-06 13:10:02,470 [INFO] [Ministry of Telecommunications / TRA] Page 2: 16 link(s) total (7 new).
+2026-11-06 13:10:08,003 [INFO] [Ministry of Telecommunications / TRA] Page 3: 22 link(s) total (6 new).
+2026-11-06 13:10:13,533 [INFO] [Ministry of Telecommunications / TRA] Page 4: 28 link(s) total (6 new).
+2026-11-06 13:10:19,062 [INFO] [Ministry of Telecommunications / TRA] Page 5: 37 link(s) total (9 new).
+2026-11-06 13:10:19,062 [INFO] [Ministry of Telecommunications / TRA] Collected 37 unique news link(s).
+2026-11-06 13:10:19,072 [INFO] [Ministry of Telecommunications / TRA] Done. 0 new article(s) saved to Ministry_of_Telecommunications_TRA.xlsx.
+2026-11-06 13:10:19,359 [INFO] === Ministry of Tourism ===
+2026-11-06 13:10:20,554 [INFO] [Ministry of Tourism] Listing page 1: https://mot.gov.lb/en/news/
+2026-11-06 13:10:21,438 [INFO] [mot.gov.lb] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:10:21,447 [INFO] ====== WebDriver manager ======
+2026-11-06 13:10:21,478 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:10:27,470 [INFO] [Ministry of Tourism] extract_candidate_links: container=whole page (no main/article/#content found), <article> tags on page=0, <a href> in container=23, <a href> in whole page=23.
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='#menu-left-menu' text='Skip to navigation' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='#main-content' text='Skip to main content' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='#' text='' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='#' text='Close' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/' text='Home' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=4, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='https://www.nna-leb.gov.lb/ar/%D9%85%D8%AA%D9%81%D8%B1%D9%82%D8%A7%D8%AA/823269/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D8%B9%D9%86-%D8%A7%D9%84%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A-%D9%84%D9%84%D8%AC%D9%86%D8%A9-%D8%AA%D9%82%D8%B5-%D9%8A-%D8%A7%D9%84%D8%A3%D8%B6%D8%B1' text='Jeita Grotto Report' -> REJECTED (different domain)
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/the-ministry/' text='The Ministry' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=12, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='#' text='Back' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/the-ministry/' text='About' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=5, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,471 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/ministers/' text='Ministers' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=9, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/locations/' text='Locations' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=9, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/administrative-transactions/' text='Administrative Transactions' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=27, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/explore-lebanon/' text='Explore Lebanon' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=15, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='#' text='Back' -> REJECTED (normalize_url->None (mailto/tel/javascript/#/empty))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/explore-lebanon/' text='Explore Lebanon' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=15, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/map/' text='Map' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=3, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/discover-cities-villages/' text='Discover Listed Sites' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=21, in_heading=False, parent_tags=['li', 'ul', 'li', 'ul']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/events/' text='Events' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=6, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/news/' text='News' -> REJECTED (same path as listing page)
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/gallery/' text='Gallery' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=7, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/authorities-amp-syndicates/' text='Authorities & Syndicates' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=24, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/lebanon-in-the-world/' text='Lebanon in the World' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=20, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,472 [INFO] [Ministry of Tourism]   container link: href='https://mot.gov.lb/en/contact-us/' text='Contact Us' -> REJECTED (no detail-path match AND no headline match AND no read-more-text match AND no self-URL-as-text match (text_len=10, in_heading=False, parent_tags=['li', 'ul', 'div', 'body']))
+2026-11-06 13:10:27,473 [INFO] [Ministry of Tourism] (selenium) Found 0 candidate links (0 new).
+2026-11-06 13:10:28,980 [INFO] [Ministry of Tourism] No further pagination found after 1 page(s).
+2026-11-06 13:10:28,983 [INFO] [Ministry of Tourism] Done. 0 new article(s) saved to Ministry_of_Tourism.xlsx.
+2026-11-06 13:10:29,304 [INFO] === National News Agency - Ministry of Information (click-pagination mode) ===
+2026-11-06 13:10:29,801 [WARNING] robots.txt at https://www.nna-leb.gov.lb/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 13:10:30,348 [INFO] ====== WebDriver manager ======
+2026-11-06 13:10:30,382 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:10:34,935 [WARNING] [National News Agency - Ministry of Information] Bot/CAPTCHA challenge encountered, stopping.
+2026-11-06 13:10:36,087 [INFO] [National News Agency - Ministry of Information] Done. 0 new article(s) saved to National_News_Agency.xlsx (1 page(s) visited).
+2026-11-06 13:10:36,381 [INFO] === ReliefWeb / OCHA ===
+2026-11-06 13:10:36,751 [INFO] [ReliefWeb / OCHA] Listing page 1: https://reliefweb.int/updates?list=Lebanon%20Updates&advanced-search=%28PC137%29
+2026-11-06 13:10:36,847 [WARNING] HTTP 202 for https://reliefweb.int/updates?list=Lebanon%20Updates&advanced-search=%28PC137%29
+2026-11-06 13:10:36,847 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:10:36,857 [INFO] ====== WebDriver manager ======
+2026-11-06 13:10:36,888 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:10:41,594 [INFO] [ReliefWeb / OCHA] (selenium) Found 20 candidate links (2 new).
+2026-11-06 13:10:43,125 [WARNING] HTTP 202 for https://reliefweb.int/map/lebanon/map-syrian-refugee-population-lebanon-october-2026
+2026-11-06 13:10:43,125 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:10:47,473 [INFO] [ReliefWeb / OCHA] Saved article 1: Map of Syrian Refugee Population in Lebanon - October 2026 - Lebanon
+2026-11-06 13:10:49,004 [WARNING] HTTP 202 for https://reliefweb.int/report/lebanon/lebanon-around-105-million-people-face-high-levels-acute-food-insecurity-following-two-successive-conflicts-and-fragile-recovery-ipc-acute-food-insecurity-analysis-september-2026-july-2027-published-5-november-2026
+2026-11-06 13:10:49,004 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:10:53,191 [INFO] [ReliefWeb / OCHA] Saved article 2: Lebanon: Around 1.05 million people face high levels of acute food insecurity fo
+2026-11-06 13:10:55,083 [INFO] [ReliefWeb / OCHA] Listing page 2: https://reliefweb.int/updates?advanced-search=%28PC137%29&list=Lebanon%20Updates&page=1
+2026-11-06 13:10:55,114 [WARNING] HTTP 202 for https://reliefweb.int/updates?advanced-search=%28PC137%29&list=Lebanon%20Updates&page=1
+2026-11-06 13:10:55,114 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:10:59,667 [INFO] [ReliefWeb / OCHA] (selenium) Found 20 candidate links (0 new).
+2026-11-06 13:11:01,628 [INFO] [ReliefWeb / OCHA] Listing page 3: https://reliefweb.int/updates?advanced-search=%28PC137%29&list=Lebanon%20Updates&page=2
+2026-11-06 13:11:01,659 [WARNING] HTTP 202 for https://reliefweb.int/updates?advanced-search=%28PC137%29&list=Lebanon%20Updates&page=2
+2026-11-06 13:11:01,659 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:11:06,292 [INFO] [ReliefWeb / OCHA] (selenium) Found 20 candidate links (0 new).
+2026-11-06 13:11:06,687 [INFO] [ReliefWeb / OCHA] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:11:07,073 [INFO] [ReliefWeb / OCHA] Done. 2 new article(s) saved to ReliefWeb_OCHA.xlsx.
+2026-11-06 13:11:07,558 [INFO] === UNDP Lebanon (click-pagination mode) ===
+2026-11-06 13:11:07,808 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:07,841 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:13,687 [INFO] [UNDP Lebanon] Page 1: found 9 candidate links (0 new).
+2026-11-06 13:11:20,428 [INFO] [UNDP Lebanon] Page 2: found 18 candidate links (0 new).
+2026-11-06 13:11:20,428 [INFO] [UNDP Lebanon] 2 page(s) in a row with nothing new - stopping (incremental mode).
+2026-11-06 13:11:20,474 [INFO] [UNDP Lebanon] Done. 0 new article(s) saved to UNDP_Lebanon.xlsx (2 page(s) visited).
+2026-11-06 13:11:20,798 [INFO] === UNESCO Lebanon (click-pagination mode) ===
+2026-11-06 13:11:22,002 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:22,033 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:28,733 [INFO] [UNESCO Lebanon] Page 1: found 34 candidate links (3 new).
+2026-11-06 13:11:30,233 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:30,265 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:30,337 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5cce84bf50aa <unknown>
+#1 0x5cce84528875 <unknown>
+#2 0x5cce84558e86 <unknown>
+#3 0x5cce84556d44 <unknown>
+#4 0x5cce84596f51 <unknown>
+#5 0x5cce845969fc <unknown>
+#6 0x5cce84561a07 <unknown>
+#7 0x5cce84560d1e <unknown>
+#8 0x5cce845617f1 <unknown>
+#9 0x5cce84bb7c5c <unknown>
+#10 0x5cce84bb6475 <unknown>
+#11 0x5cce84ba17f8 <unknown>
+#12 0x5cce84bb70ca <unknown>
+#13 0x5cce84b8a3f9 <unknown>
+#14 0x5cce84bdf848 <unknown>
+#15 0x5cce84bdf9e5 <unknown>
+#16 0x5cce84bf3a43 <unknown>
+#17 0x7f93f98abe6b <unknown>
+#18 0x7f93f993f55c <unknown>
+).
+2026-11-06 13:11:32,720 [INFO] [UNESCO Lebanon] Saved article 1: UNESCO Peru promotes a comprehensive vision of sport for human
+2026-11-06 13:11:34,220 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:34,251 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:34,329 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x6126d404b0aa <unknown>
+#1 0x6126d397e875 <unknown>
+#2 0x6126d39aee86 <unknown>
+#3 0x6126d39acd44 <unknown>
+#4 0x6126d39ecf51 <unknown>
+#5 0x6126d39ec9fc <unknown>
+#6 0x6126d39b7a07 <unknown>
+#7 0x6126d39b6d1e <unknown>
+#8 0x6126d39b77f1 <unknown>
+#9 0x6126d400dc5c <unknown>
+#10 0x6126d400c475 <unknown>
+#11 0x6126d3ff77f8 <unknown>
+#12 0x6126d400d0ca <unknown>
+#13 0x6126d3fe03f9 <unknown>
+#14 0x6126d4035848 <unknown>
+#15 0x6126d40359e5 <unknown>
+#16 0x6126d4049a43 <unknown>
+#17 0x76f776aabe6b <unknown>
+#18 0x76f776b3f55c <unknown>
+).
+2026-11-06 13:11:35,767 [INFO] [UNESCO Lebanon] Saved article 2: UNESCO continues to address abusive lawsuits silencing journalists
+2026-11-06 13:11:37,268 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:37,299 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:37,370 [ERROR] Could not start a second Selenium/Chrome browser for article fetches (Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+#0 0x5bfe7b0aa0aa <unknown>
+#1 0x5bfe7a9dd875 <unknown>
+#2 0x5bfe7aa0de86 <unknown>
+#3 0x5bfe7aa0bd44 <unknown>
+#4 0x5bfe7aa4bf51 <unknown>
+#5 0x5bfe7aa4b9fc <unknown>
+#6 0x5bfe7aa16a07 <unknown>
+#7 0x5bfe7aa15d1e <unknown>
+#8 0x5bfe7aa167f1 <unknown>
+#9 0x5bfe7b06cc5c <unknown>
+#10 0x5bfe7b06b475 <unknown>
+#11 0x5bfe7b0567f8 <unknown>
+#12 0x5bfe7b06c0ca <unknown>
+#13 0x5bfe7b03f3f9 <unknown>
+#14 0x5bfe7b094848 <unknown>
+#15 0x5bfe7b0949e5 <unknown>
+#16 0x5bfe7b0a8a43 <unknown>
+#17 0x71f76a0abe6b <unknown>
+#18 0x71f76a13f55c <unknown>
+).
+2026-11-06 13:11:38,694 [INFO] [UNESCO Lebanon] Saved article 3: Global Teacher Prize Chile 2026 recognizes early childhood educator
+2026-11-06 13:11:45,312 [INFO] [UNESCO Lebanon] Page 2: found 38 candidate links (0 new).
+2026-11-06 13:11:51,960 [INFO] [UNESCO Lebanon] Page 3: found 42 candidate links (0 new).
+2026-11-06 13:11:51,960 [INFO] [UNESCO Lebanon] 2 page(s) in a row with nothing new - stopping (incremental mode).
+2026-11-06 13:11:52,225 [INFO] [UNESCO Lebanon] Done. 3 new article(s) saved to UNESCO_Lebanon.xlsx (3 page(s) visited).
+2026-11-06 13:11:52,658 [INFO] === UNFPA ===
+2026-11-06 13:11:52,798 [INFO] [UNFPA] Listing page 1: https://www.unfpa.org/news
+2026-11-06 13:11:52,984 [INFO] [UNFPA] (static) Found 12 candidate links (0 new).
+2026-11-06 13:11:54,574 [INFO] [UNFPA] Listing page 2: https://www.unfpa.org/news?page=1
+2026-11-06 13:11:54,707 [INFO] [UNFPA] (static) Found 12 candidate links (0 new).
+2026-11-06 13:11:54,798 [INFO] [UNFPA] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:11:54,886 [INFO] [UNFPA] Done. 0 new article(s) saved to UNFPA.xlsx.
+2026-11-06 13:11:55,130 [INFO] === UNHCR Lebanon (click-pagination mode) ===
+2026-11-06 13:11:55,269 [INFO] ====== WebDriver manager ======
+2026-11-06 13:11:55,300 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:11:59,981 [WARNING] [UNHCR Lebanon] Bot/CAPTCHA challenge encountered, stopping.
+2026-11-06 13:11:59,993 [INFO] [UNHCR Lebanon] Done. 0 new article(s) saved to UNHCR_Lebanon.xlsx (1 page(s) visited).
+2026-11-06 13:12:00,317 [INFO] === UNICEF Lebanon (custom 'load more' driver) ===
+2026-11-06 13:12:00,431 [INFO] ====== WebDriver manager ======
+2026-11-06 13:12:00,464 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:12:02,416 [INFO] [UNICEF Lebanon] Initial batch: 14 link(s).
+2026-11-06 13:12:02,422 [INFO] [UNICEF Lebanon] 'Load more items' button gone - reached the end after 0 click(s).
+2026-11-06 13:12:02,422 [INFO] [UNICEF Lebanon] Collected 14 unique press-release link(s).
+2026-11-06 13:12:02,429 [INFO] [UNICEF Lebanon] Done. 0 new article(s) saved to UNICEF_Lebanon.xlsx.
+2026-11-06 13:12:02,744 [INFO] === UNIDO ===
+2026-11-06 13:12:02,862 [WARNING] robots.txt at https://www.unido.org/robots.txt returned HTTP 403 - treating as unrestricted.
+2026-11-06 13:12:02,912 [INFO] [UNIDO] Listing page 1: https://www.unido.org/news
+2026-11-06 13:12:02,969 [WARNING] HTTP 403 for https://www.unido.org/news
+2026-11-06 13:12:02,969 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:02,978 [INFO] ====== WebDriver manager ======
+2026-11-06 13:12:03,013 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:12:10,642 [INFO] [UNIDO] (selenium) Found 20 candidate links (11 new).
+2026-11-06 13:12:12,228 [WARNING] HTTP 403 for https://www.unido.org/news/bridge-cities-2026-advances-ai-and-green-innovation-cities-future
+2026-11-06 13:12:12,228 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:16,433 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/bridge-cities-2026-advances-ai-and-green-innovation-cities-future
+2026-11-06 13:12:17,997 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-uclg-launch-global-scalex-alliance-cities-take-proven-solutions-scale
+2026-11-06 13:12:17,998 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:22,200 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-uclg-launch-global-scalex-alliance-cities-take-proven-solutions-scale
+2026-11-06 13:12:23,767 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-cemr-strengthen-cooperation-local-and-regional-development
+2026-11-06 13:12:23,767 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:29,049 [INFO] [UNIDO] Saved article 1: UNIDO and CEMR strengthen cooperation on local and regional development | UNIDO
+2026-11-06 13:12:30,607 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-festo-deepen-strategic-partnership-through-unido-foundation-and-industrial-ai-collaboration
+2026-11-06 13:12:30,607 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:34,810 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-festo-deepen-strategic-partnership-through-unido-foundation-and-industrial-ai-collaboration
+2026-11-06 13:12:36,389 [WARNING] HTTP 403 for https://www.unido.org/news/unido-81st-united-nations-general-assembly
+2026-11-06 13:12:36,389 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:40,680 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-81st-united-nations-general-assembly
+2026-11-06 13:12:42,236 [WARNING] HTTP 403 for https://www.unido.org/news/unido-promotes-investment-trade-and-industrial-cooperation-cifit-2026
+2026-11-06 13:12:42,237 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:46,415 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-promotes-investment-trade-and-industrial-cooperation-cifit-2026
+2026-11-06 13:12:47,956 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-germany-strengthen-cooperation-youth-empowerment-and-skills-development
+2026-11-06 13:12:47,957 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:53,917 [INFO] [UNIDO] Saved article 2: UNIDO and Germany strengthen cooperation on youth empowerment and skills develop
+2026-11-06 13:12:55,484 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-idb-sign-framework-agreement-collaborate-advancing-sustainable-industrial-transformation-lac
+2026-11-06 13:12:55,484 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:12:59,688 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-idb-sign-framework-agreement-collaborate-advancing-sustainable-industrial-transformation-lac
+2026-11-06 13:13:01,248 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-ibm-advance-responsible-ai-inclusive-industrial-transformation-unga-81
+2026-11-06 13:13:01,248 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:05,431 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-ibm-advance-responsible-ai-inclusive-industrial-transformation-unga-81
+2026-11-06 13:13:06,986 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-tajikistan-advance-digital-and-industrial-cooperation-eco-industry-meetings-and-textile-forum
+2026-11-06 13:13:06,986 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:11,280 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-tajikistan-advance-digital-and-industrial-cooperation-eco-industry-meetings-and-textile-forum
+2026-11-06 13:13:12,826 [WARNING] HTTP 403 for https://www.unido.org/news/unido-and-kenya-sign-programme-country-partnership-pcp-20-accelerate-inclusive-and-sustainable-industrial-development
+2026-11-06 13:13:12,826 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:17,075 [WARNING] [UNIDO] Bot/CAPTCHA/error page for article, skipping (will retry later): https://www.unido.org/news/unido-and-kenya-sign-programme-country-partnership-pcp-20-accelerate-inclusive-and-sustainable-industrial-development
+2026-11-06 13:13:18,684 [INFO] [UNIDO] Listing page 2: https://www.unido.org/news?page=1
+2026-11-06 13:13:18,757 [WARNING] HTTP 403 for https://www.unido.org/news?page=1
+2026-11-06 13:13:18,757 [INFO] [www.unido.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:22,960 [WARNING] [UNIDO] Listing page returned a bot/CAPTCHA/error screen instead of real content: https://www.unido.org/news?page=1 - stopping.
+2026-11-06 13:13:23,066 [INFO] [UNIDO] Done. 2 new article(s) saved to UNIDO.xlsx.
+2026-11-06 13:13:23,472 [INFO] === UNIFIL ===
+2026-11-06 13:13:23,848 [INFO] [UNIFIL] Listing page 1: https://unifil.unmissions.org/en/press-releases
+2026-11-06 13:13:24,181 [INFO] [UNIFIL] (static) Found 10 candidate links (0 new).
+2026-11-06 13:13:25,701 [INFO] [UNIFIL] Listing page 2: https://unifil.unmissions.org/en/press-releases?block_config_key=block_3.JsGIVrKo3KdGjyCA1R4JGDXjWdCYCPmJiRnyhy0zSx0&page=1
+2026-11-06 13:13:28,334 [INFO] [UNIFIL] (static) Found 10 candidate links (0 new).
+2026-11-06 13:13:28,351 [INFO] [UNIFIL] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:13:28,367 [INFO] [UNIFIL] Done. 0 new article(s) saved to UNIFIL.xlsx.
+2026-11-06 13:13:28,606 [INFO] === UNRWA ===
+2026-11-06 13:13:28,830 [INFO] [UNRWA] Listing page 1: https://reliefweb.int/updates?advanced-search=%28S1484%29_%28C137%29
+2026-11-06 13:13:28,939 [WARNING] HTTP 202 for https://reliefweb.int/updates?advanced-search=%28S1484%29_%28C137%29
+2026-11-06 13:13:28,939 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:28,949 [INFO] ====== WebDriver manager ======
+2026-11-06 13:13:28,979 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:13:33,701 [INFO] [UNRWA] (selenium) Found 20 candidate links (0 new).
+2026-11-06 13:13:35,222 [INFO] [UNRWA] Listing page 2: https://reliefweb.int/updates?advanced-search=%28S1484%29_%28C137%29&page=1
+2026-11-06 13:13:35,258 [WARNING] HTTP 202 for https://reliefweb.int/updates?advanced-search=%28S1484%29_%28C137%29&page=1
+2026-11-06 13:13:35,258 [INFO] [reliefweb.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:39,952 [INFO] [UNRWA] (selenium) Found 20 candidate links (0 new).
+2026-11-06 13:13:39,970 [INFO] [UNRWA] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:13:39,988 [INFO] [UNRWA] Done. 0 new article(s) saved to UNRWA.xlsx.
+2026-11-06 13:13:40,301 [INFO] === USAID / U.S. Embassy Lebanon ===
+2026-11-06 13:13:40,445 [INFO] [USAID / U.S. Embassy Lebanon] Listing page 1: https://lb.usembassy.gov/category/news/
+2026-11-06 13:13:40,488 [WARNING] HTTP 405 for https://lb.usembassy.gov/category/news/
+2026-11-06 13:13:40,488 [INFO] [lb.usembassy.gov] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:40,497 [INFO] ====== WebDriver manager ======
+2026-11-06 13:13:40,530 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:13:45,594 [INFO] [USAID / U.S. Embassy Lebanon] (selenium) Found 9 candidate links (1 new).
+2026-11-06 13:13:47,107 [WARNING] HTTP 405 for https://lb.usembassy.gov/friends-of-lebanon-statement-affirming-support-for-lebanese-sovereignty-and-state-monopoly-on-arms/
+2026-11-06 13:13:47,107 [INFO] [lb.usembassy.gov] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:51,503 [INFO] [USAID / U.S. Embassy Lebanon] Saved article 1: Friends of Lebanon Statement Affirming Support for Lebanese Sovereignty and Stat
+2026-11-06 13:13:53,047 [INFO] [USAID / U.S. Embassy Lebanon] Listing page 2: https://lb.usembassy.gov/category/news/page/2/
+2026-11-06 13:13:53,062 [WARNING] HTTP 405 for https://lb.usembassy.gov/category/news/page/2/
+2026-11-06 13:13:53,062 [INFO] [lb.usembassy.gov] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:13:58,213 [INFO] [USAID / U.S. Embassy Lebanon] (selenium) Found 9 candidate links (0 new).
+2026-11-06 13:13:59,756 [INFO] [USAID / U.S. Embassy Lebanon] Listing page 3: https://lb.usembassy.gov/category/news/page/3/
+2026-11-06 13:13:59,769 [WARNING] HTTP 405 for https://lb.usembassy.gov/category/news/page/3/
+2026-11-06 13:13:59,769 [INFO] [lb.usembassy.gov] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:14:04,863 [INFO] [USAID / U.S. Embassy Lebanon] (selenium) Found 9 candidate links (0 new).
+2026-11-06 13:14:04,905 [INFO] [USAID / U.S. Embassy Lebanon] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:14:04,949 [INFO] [USAID / U.S. Embassy Lebanon] Done. 1 new article(s) saved to USAID_US_Embassy_Lebanon.xlsx.
+2026-11-06 13:14:05,336 [INFO] === United Nations in Lebanon ===
+2026-11-06 13:14:05,787 [INFO] [United Nations in Lebanon] Listing page 1: https://lebanon.un.org/en/press-centre/press-releases
+2026-11-06 13:14:06,628 [INFO] [United Nations in Lebanon] (static) Found 12 candidate links (0 new).
+2026-11-06 13:14:08,194 [INFO] [United Nations in Lebanon] Listing page 2: https://lebanon.un.org/en/press-centre/press-releases?page=1
+2026-11-06 13:14:09,075 [INFO] [United Nations in Lebanon] (static) Found 12 candidate links (0 new).
+2026-11-06 13:14:09,136 [INFO] [United Nations in Lebanon] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:14:09,199 [INFO] [United Nations in Lebanon] Done. 0 new article(s) saved to United_Nations_in_Lebanon.xlsx.
+2026-11-06 13:14:09,403 [INFO] === WFP ===
+2026-11-06 13:14:09,729 [INFO] [WFP] Listing page 1: https://www.wfp.org/news
+2026-11-06 13:14:10,099 [INFO] [WFP] (static) Found 25 candidate links (1 new).
+2026-11-06 13:14:11,673 [INFO] [www.wfp.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:14:11,682 [INFO] ====== WebDriver manager ======
+2026-11-06 13:14:11,715 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:14:16,947 [INFO] [WFP] Saved article 1: European Union Supports critical humanitarian air service in Yemen | World Food 
+2026-11-06 13:14:18,546 [INFO] [WFP] Listing page 2: https://www.wfp.org/news?page=1
+2026-11-06 13:14:18,575 [WARNING] HTTP 202 for https://www.wfp.org/news?page=1
+2026-11-06 13:14:18,575 [INFO] [www.wfp.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:14:22,931 [INFO] [WFP] (selenium) Found 25 candidate links (0 new).
+2026-11-06 13:14:24,530 [INFO] [WFP] Listing page 3: https://www.wfp.org/news?page=2
+2026-11-06 13:14:24,560 [WARNING] HTTP 202 for https://www.wfp.org/news?page=2
+2026-11-06 13:14:24,560 [INFO] [www.wfp.org] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:14:29,990 [INFO] [WFP] (selenium) Found 25 candidate links (0 new).
+2026-11-06 13:14:30,127 [INFO] [WFP] 2 listing page(s) in a row with nothing new - older pages were already scraped, stopping (incremental mode).
+2026-11-06 13:14:30,227 [INFO] [WFP] Done. 1 new article(s) saved to WFP.xlsx.
+2026-11-06 13:14:30,603 [INFO] === WHO Lebanon ===
+2026-11-06 13:14:31,758 [INFO] [WHO Lebanon] Listing page 1: https://www.emro.who.int/lbn/lebanon-news/
+2026-11-06 13:14:32,211 [WARNING] HTTP 502 for https://www.emro.who.int/lbn/lebanon-news/ (attempt 1/3)
+2026-11-06 13:14:35,673 [WARNING] HTTP 502 for https://www.emro.who.int/lbn/lebanon-news/ (attempt 2/3)
+2026-11-06 13:14:39,117 [WARNING] HTTP 502 for https://www.emro.who.int/lbn/lebanon-news/ (attempt 3/3) - giving up after retries
+2026-11-06 13:14:39,117 [INFO] [www.emro.who.int] Page looks JS-rendered / static fetch was thin for this URL - retrying with headless Chrome.
+2026-11-06 13:14:39,126 [INFO] ====== WebDriver manager ======
+2026-11-06 13:14:39,157 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:14:43,925 [WARNING] [WHO Lebanon] Listing page returned a bot/CAPTCHA/error screen instead of real content: https://www.emro.who.int/lbn/lebanon-news/ - stopping.
+2026-11-06 13:14:43,946 [INFO] [WHO Lebanon] Done. 0 new article(s) saved to WHO_Lebanon.xlsx.
+2026-11-06 13:14:44,245 [INFO] === World Bank - Lebanon (custom Angular pager) ===
+2026-11-06 13:14:44,254 [INFO] ====== WebDriver manager ======
+2026-11-06 13:14:44,286 [INFO] Driver [/home/runner/.wdm/drivers/chromedriver/linux64/156.0.8078.80/chromedriver-linux64/chromedriver] found in cache by browser version
+2026-11-06 13:15:05,164 [INFO] [World Bank - Lebanon] Listing page ? (loop 1): found 10 candidate links (8 new).
+2026-11-06 13:15:06,855 [INFO] [World Bank - Lebanon] Saved article 1: Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes
+2026-11-06 13:15:08,537 [INFO] [World Bank - Lebanon] Saved article 2: Justice for All: How Peru's ALEGRA Centers Are Putting the Law Within Reach of W
+2026-11-06 13:15:10,216 [INFO] [World Bank - Lebanon] Saved article 3: Chile turns its forests into economic opportunities for rural communities
+2026-11-06 13:15:11,999 [INFO] [World Bank - Lebanon] Saved article 4: Nature at the Heart of Food Security: Resilient Agriculture in Sierra Leone
+2026-11-06 13:15:13,677 [INFO] [World Bank - Lebanon] Saved article 5: Mobilizing Private Capital Through Social Protection
+2026-11-06 13:15:15,285 [INFO] [World Bank - Lebanon] Saved article 6: Developing Countries’ External Debt Surges to Record $9.4 Trillion
+2026-11-06 13:15:16,899 [INFO] [World Bank - Lebanon] Saved article 7: JJ/WBGSP Participating Programs 2027— Application Window #1
+2026-11-06 13:15:18,652 [INFO] [World Bank - Lebanon] Saved article 8: JJ/WBGSP Participating Programs for 2027 Scholarship Applications
+2026-11-06 13:15:18,659 [INFO] [World Bank - Lebanon] No further pagination found after 1 page(s).
+2026-11-06 13:15:18,674 [INFO] [World Bank - Lebanon] Done. 8 new article(s) saved to World_Bank_Lebanon.xlsx.
