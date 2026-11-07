@@ -1,12 +1,12 @@
 {
  "org": "WHO Lebanon",
  "saved": 0,
- "links_found": 0,
+ "links_found": 20,
  "attempted": 0,
- "challenges": 1,
+ "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
- "status": "blocked",
- "message": "listing page is a bot-challenge/error page",
- "finished_at": "2026-11-06T13:14:43.946049+00:00"
+ "pages": 2,
+ "status": "ok",
+ "message": "",
+ "finished_at": "2026-11-07T11:51:01.299094+00:00"
 }
