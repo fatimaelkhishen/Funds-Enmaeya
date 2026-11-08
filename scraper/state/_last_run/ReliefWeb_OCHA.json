@@ -1,12 +1,12 @@
 {
  "org": "ReliefWeb / OCHA",
- "saved": 3,
- "links_found": 60,
- "attempted": 3,
+ "saved": 0,
+ "links_found": 40,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-07T11:46:05.823587+00:00"
+ "finished_at": "2026-11-08T11:57:09.494358+00:00"
 }
