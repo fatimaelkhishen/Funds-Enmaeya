@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Interior and Municipalities",
- "saved": 0,
- "links_found": 33,
- "attempted": 0,
+ "saved": 4,
+ "links_found": 45,
+ "attempted": 4,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 2,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-09T13:43:21.352957+00:00"
+ "finished_at": "2026-11-10T13:22:48.700828+00:00"
 }

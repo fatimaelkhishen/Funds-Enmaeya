@@ -1,12 +1,12 @@
 {
  "org": "WFP",
- "saved": 3,
- "links_found": 125,
- "attempted": 3,
+ "saved": 2,
+ "links_found": 75,
+ "attempted": 2,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 5,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-09T13:54:40.041362+00:00"
+ "finished_at": "2026-11-10T13:34:03.739268+00:00"
 }
