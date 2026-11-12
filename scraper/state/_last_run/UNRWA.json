@@ -1,12 +1,12 @@
 {
  "org": "UNRWA",
- "saved": 1,
- "links_found": 60,
- "attempted": 1,
+ "saved": 0,
+ "links_found": 40,
+ "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 3,
+ "pages": 2,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-11T12:43:52.950818+00:00"
+ "finished_at": "2026-11-12T13:55:23.030496+00:00"
 }

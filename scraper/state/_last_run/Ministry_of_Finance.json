@@ -6,7 +6,7 @@
  "challenges": 0,
  "fetch_failures": 0,
  "pages": 1,
- "status": "ok",
- "message": "",
- "finished_at": "2026-11-11T12:25:42.892406+00:00"
+ "status": "error",
+ "message": "listing page could not be fetched",
+ "finished_at": "2026-11-12T13:38:21.707310+00:00"
 }

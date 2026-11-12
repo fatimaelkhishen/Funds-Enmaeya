@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Education and Higher Education",
- "saved": 0,
- "links_found": 30,
- "attempted": 0,
+ "saved": 2,
+ "links_found": 45,
+ "attempted": 2,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 2,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-11T12:25:14.397594+00:00"
+ "finished_at": "2026-11-12T13:36:58.622049+00:00"
 }

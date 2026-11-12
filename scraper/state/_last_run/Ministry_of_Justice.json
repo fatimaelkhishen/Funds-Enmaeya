@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Justice",
  "saved": 0,
- "links_found": 0,
+ "links_found": 299,
  "attempted": 0,
  "challenges": 0,
  "fetch_failures": 0,
  "pages": 1,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-11T12:31:18.419741+00:00"
+ "finished_at": "2026-11-12T13:45:39.577104+00:00"
 }
