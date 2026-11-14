@@ -1,12 +1,12 @@
 {
  "org": "European Union Delegation to Lebanon",
- "saved": 0,
- "links_found": 0,
- "attempted": 0,
+ "saved": 96,
+ "links_found": 164,
+ "attempted": 96,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
+ "pages": 5,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-13T12:46:56.589482+00:00"
+ "finished_at": "2026-11-14T12:05:03.822682+00:00"
 }
