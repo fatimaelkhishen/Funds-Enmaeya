@@ -1,45 +1,45 @@
 ﻿run_at,site,status,new_articles,total_rows,minutes,note
-2026-11-15 12:47,AFD_Lebanon,NO NEW,0,20,0.1,nothing new since last run
-2026-11-15 12:47,EBRD,NO NEW,0,114,0.3,no article links found on the listing page
-2026-11-15 12:47,ESCWA,BLOCKED,0,164,0.1,listing page is a bot-challenge/error page
-2026-11-15 12:47,EU_Delegation_Lebanon,OK,6,617,0.8,
-2026-11-15 12:47,European_Investment_Bank,NO NEW,0,2115,0.3,no article links found on the listing page
-2026-11-15 12:47,FAO_Lebanon,NO NEW,0,132,0.3,nothing new since last run
-2026-11-15 12:47,GIZ_Lebanon,NO NEW,0,24,0.4,nothing new since last run
-2026-11-15 12:47,ILO_Lebanon_Arab_States,NO NEW,0,338,0.3,nothing new since last run
-2026-11-15 12:47,IMF_Lebanon,NO NEW,0,212,0.4,nothing new since last run
-2026-11-15 12:47,IOM,NO NEW,0,367,0.3,nothing new since last run
-2026-11-15 12:47,Islamic_Development_Bank,NO NEW,0,1170,0.1,nothing new since last run
-2026-11-15 12:47,Lebanese_Presidency,NO NEW,0,153,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Agriculture,OK,6,2651,0.7,
-2026-11-15 12:47,Ministry_of_Culture,NO NEW,0,900,0.2,nothing new since last run
-2026-11-15 12:47,Ministry_of_Economy_and_Trade,NO NEW,0,52,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Education_and_Higher_Education,NO NEW,0,213,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Energy_and_Water,NO NEW,0,137,0.2,no article links found on the listing page
-2026-11-15 12:47,Ministry_of_Environment,NO NEW,0,9,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Finance,NO NEW,0,0,0.2,no article links found on the listing page
-2026-11-15 12:47,Ministry_of_Foreign_Affairs,CRASHED,0,222,5.2,exit code 1 - see the error above / scrape_log
-2026-11-15 12:47,Ministry_of_Industry,NO NEW,0,143,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Interior_and_Municipalities,OK,2,136,0.4,
-2026-11-15 12:47,Ministry_of_Justice,NO NEW,0,299,0.1,nothing new since last run
-2026-11-15 12:47,Ministry_of_Labor,BLOCKED,0,0,0.1,listing page is a bot-challenge/error page
-2026-11-15 12:47,Ministry_of_Public_Health,NO NEW,0,4333,0.3,nothing new since last run
-2026-11-15 12:47,Ministry_of_Public_Works_and_Transport,NO NEW,0,63,0.2,nothing new since last run
-2026-11-15 12:47,Ministry_of_Social_Affairs,ERROR,0,495,6.3,listing page could not be fetched
-2026-11-15 12:47,Ministry_of_Telecommunications_TRA,NO NEW,0,105,0.5,nothing new since last run
-2026-11-15 12:47,Ministry_of_Tourism,NO NEW,0,0,0.2,no article links found on the listing page
-2026-11-15 12:47,National_News_Agency,NO NEW,0,3010,0.1,no article links found on the listing page
-2026-11-15 12:47,ReliefWeb_OCHA,NO NEW,0,3295,0.2,nothing new since last run
-2026-11-15 12:47,UNDP_Lebanon,NO NEW,0,198,0.3,no article links found on the listing page
-2026-11-15 12:47,UNESCO_Lebanon,NO NEW,0,1836,0.3,no article links found on the listing page
-2026-11-15 12:47,UNFPA,NO NEW,0,378,0.1,nothing new since last run
-2026-11-15 12:47,UNHCR_Lebanon,NO NEW,0,63,0.1,no article links found on the listing page
-2026-11-15 12:47,UNICEF_Lebanon,NO NEW,0,17,0.0,nothing new since last run
-2026-11-15 12:47,UNIDO,BLOCKED,0,737,0.1,listing page is a bot-challenge/error page
-2026-11-15 12:47,UNIFIL,NO NEW,0,237,0.1,nothing new since last run
-2026-11-15 12:47,UNRWA,NO NEW,0,101,0.2,nothing new since last run
-2026-11-15 12:47,USAID_US_Embassy_Lebanon,NO NEW,0,282,0.2,nothing new since last run
-2026-11-15 12:47,United_Nations_in_Lebanon,NO NEW,0,428,0.1,nothing new since last run
-2026-11-15 12:47,WFP,OK,5,667,0.9,
-2026-11-15 12:47,WHO_Lebanon,NO NEW,0,157,0.1,nothing new since last run
-2026-11-15 12:47,World_Bank_Lebanon,NO NEW,0,97,0.4,nothing new since last run
+2026-11-16 13:40,AFD_Lebanon,NO NEW,0,20,0.1,nothing new since last run
+2026-11-16 13:40,EBRD,OK,4,118,0.5,
+2026-11-16 13:40,ESCWA,BLOCKED,0,164,0.1,listing page is a bot-challenge/error page
+2026-11-16 13:40,EU_Delegation_Lebanon,OK,11,628,1.4,
+2026-11-16 13:40,European_Investment_Bank,NO NEW,0,2115,0.3,no article links found on the listing page
+2026-11-16 13:40,FAO_Lebanon,NO NEW,0,132,0.2,nothing new since last run
+2026-11-16 13:40,GIZ_Lebanon,NO NEW,0,24,0.3,nothing new since last run
+2026-11-16 13:40,ILO_Lebanon_Arab_States,NO NEW,0,338,0.3,nothing new since last run
+2026-11-16 13:40,IMF_Lebanon,NO NEW,0,212,0.4,nothing new since last run
+2026-11-16 13:40,IOM,NO NEW,0,367,0.2,nothing new since last run
+2026-11-16 13:40,Islamic_Development_Bank,NO NEW,0,1170,0.1,nothing new since last run
+2026-11-16 13:40,Lebanese_Presidency,OK,7,160,0.4,
+2026-11-16 13:40,Ministry_of_Agriculture,OK,1,2652,0.4,
+2026-11-16 13:40,Ministry_of_Culture,NO NEW,0,900,0.2,nothing new since last run
+2026-11-16 13:40,Ministry_of_Economy_and_Trade,NO NEW,0,52,0.1,nothing new since last run
+2026-11-16 13:40,Ministry_of_Education_and_Higher_Education,NO NEW,0,213,0.4,nothing new since last run
+2026-11-16 13:40,Ministry_of_Energy_and_Water,NO NEW,0,137,0.2,no article links found on the listing page
+2026-11-16 13:40,Ministry_of_Environment,NO NEW,0,9,0.1,nothing new since last run
+2026-11-16 13:40,Ministry_of_Finance,NO NEW,0,0,0.2,no article links found on the listing page
+2026-11-16 13:40,Ministry_of_Foreign_Affairs,CRASHED,0,222,5.2,exit code 1 - see the error above / scrape_log
+2026-11-16 13:40,Ministry_of_Industry,NO NEW,0,143,0.1,nothing new since last run
+2026-11-16 13:40,Ministry_of_Interior_and_Municipalities,OK,2,138,0.5,
+2026-11-16 13:40,Ministry_of_Justice,NO NEW,0,299,0.6,nothing new since last run
+2026-11-16 13:40,Ministry_of_Labor,BLOCKED,0,0,0.1,listing page is a bot-challenge/error page
+2026-11-16 13:40,Ministry_of_Public_Health,OK,4,4337,0.7,
+2026-11-16 13:40,Ministry_of_Public_Works_and_Transport,NO NEW,0,63,0.2,nothing new since last run
+2026-11-16 13:40,Ministry_of_Social_Affairs,ERROR,0,495,6.3,listing page could not be fetched
+2026-11-16 13:40,Ministry_of_Telecommunications_TRA,NO NEW,0,105,0.4,nothing new since last run
+2026-11-16 13:40,Ministry_of_Tourism,NO NEW,0,0,0.2,no article links found on the listing page
+2026-11-16 13:40,National_News_Agency,NO NEW,0,3010,0.1,no article links found on the listing page
+2026-11-16 13:40,ReliefWeb_OCHA,OK,2,3297,0.6,
+2026-11-16 13:40,UNDP_Lebanon,NO NEW,0,198,0.2,no article links found on the listing page
+2026-11-16 13:40,UNESCO_Lebanon,OK,2,1838,0.5,
+2026-11-16 13:40,UNFPA,NO NEW,0,378,0.1,nothing new since last run
+2026-11-16 13:40,UNHCR_Lebanon,NO NEW,0,63,0.1,no article links found on the listing page
+2026-11-16 13:40,UNICEF_Lebanon,NO NEW,0,17,0.0,nothing new since last run
+2026-11-16 13:40,UNIDO,BLOCKED,0,737,0.1,listing page is a bot-challenge/error page
+2026-11-16 13:40,UNIFIL,NO NEW,0,237,0.1,nothing new since last run
+2026-11-16 13:40,UNRWA,NO NEW,0,101,0.2,nothing new since last run
+2026-11-16 13:40,USAID_US_Embassy_Lebanon,OK,1,283,0.4,
+2026-11-16 13:40,United_Nations_in_Lebanon,NO NEW,0,428,0.1,nothing new since last run
+2026-11-16 13:40,WFP,NO NEW,0,667,0.1,nothing new since last run
+2026-11-16 13:40,WHO_Lebanon,NO NEW,0,157,0.1,nothing new since last run
+2026-11-16 13:40,World_Bank_Lebanon,OK,1,98,0.4,

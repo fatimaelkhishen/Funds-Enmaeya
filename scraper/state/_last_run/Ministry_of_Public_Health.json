@@ -1,12 +1,12 @@
 {
  "org": "Ministry of Public Health",
- "saved": 0,
- "links_found": 204,
- "attempted": 0,
+ "saved": 4,
+ "links_found": 306,
+ "attempted": 4,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 2,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-15T12:36:54.160173+00:00"
+ "finished_at": "2026-11-16T13:30:31.608757+00:00"
 }
