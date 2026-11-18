@@ -1,12 +1,12 @@
 {
  "org": "ESCWA",
- "saved": 0,
- "links_found": 0,
- "attempted": 0,
- "challenges": 1,
+ "saved": 88,
+ "links_found": 104,
+ "attempted": 88,
+ "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
- "status": "blocked",
- "message": "listing page is a bot-challenge/error page",
- "finished_at": "2026-11-17T14:03:25.131932+00:00"
+ "pages": 5,
+ "status": "ok",
+ "message": "",
+ "finished_at": "2026-11-18T13:41:48.969250+00:00"
 }
