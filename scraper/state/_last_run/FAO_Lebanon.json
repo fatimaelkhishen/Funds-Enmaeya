@@ -1,12 +1,12 @@
 {
  "org": "FAO Lebanon",
- "saved": 0,
- "links_found": 1,
- "attempted": 0,
+ "saved": 5,
+ "links_found": 43,
+ "attempted": 5,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
+ "pages": 3,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-23T15:39:17.226035+00:00"
+ "finished_at": "2026-11-24T15:31:29.284993+00:00"
 }
