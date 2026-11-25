@@ -1,12 +1,12 @@
 {
  "org": "Lebanese Presidency",
- "saved": 0,
- "links_found": 0,
- "attempted": 0,
+ "saved": 18,
+ "links_found": 60,
+ "attempted": 18,
  "challenges": 0,
  "fetch_failures": 0,
- "pages": 1,
+ "pages": 4,
  "status": "ok",
  "message": "",
- "finished_at": "2026-11-24T15:34:50.779918+00:00"
+ "finished_at": "2026-11-25T15:22:14.096250+00:00"
 }
